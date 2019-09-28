@@ -1,5 +1,11 @@
 /* Core Styles */
 
+a:link {color:#cc3300; text-decoration:none;}
+a:visited {color:#cc3300; text-decoration:none;}
+a:hover {color:#0000cc; text-decoration:underline;}
+a:active {color:#cc3300; text-decoration:underline;}
+a {color:#cc3300; text-decoration:underline;}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -54,7 +60,7 @@ p {
 #showcase .bg-image {
   position: absolute;
   background: #333
-    url("https://static.pexels.com/photos/248515/pexels-photo-248515.png");
+    url("../images/home-panel1-bg-1024x500.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -133,8 +139,11 @@ p {
 }
 
 #main-footer a {
-  color: #2690d4;
-  text-decoration: none;
+ color: #2690d4;
+}
+
+#main-footer a hover {
+    color:#0000cc; text-decoration:underline;
 }
 
 /* Media Queries */
