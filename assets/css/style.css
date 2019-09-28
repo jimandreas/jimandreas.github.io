@@ -146,9 +146,43 @@ p {
     color:#0000cc; text-decoration:underline;
 }
 
-/* Media Queries */
+/* Media Queries / sizing breakpoints */
 
-@media (min-width: 1500px) {
+ /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+body {
+    background-color: lightblue;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+body {
+    background-color: darkblue;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+body {
+    background-color: red;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+body {
+    background-color: green;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+    body {
+        background: #333;
+      }
+/*@media (min-width: 1500px) {*/
   .grid {
     display: grid;
     grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;

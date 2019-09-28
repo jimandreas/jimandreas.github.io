@@ -15,3 +15,6 @@ by:
 Follow the BBC guidelines:
 <br>
 [Cascading Style Sheets (CSS) Standard v1.3](http://www.bbc.co.uk/guidelines/futuremedia/technical/css.shtml)
+
+### Responsive Web Design Intro
+https://www.w3schools.com/css/css_rwd_intro.asp
