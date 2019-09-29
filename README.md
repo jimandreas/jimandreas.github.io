@@ -18,3 +18,10 @@ Follow the BBC guidelines:
 
 ### Responsive Web Design Intro
 https://www.w3schools.com/css/css_rwd_intro.asp
+
+### Horizontal scrolling
+https://developers.google.com/web/updates/2018/07/css-scroll-snap
+
+### How to - Include HTML
+https://www.w3schools.com/howto/howto_html_include.asp
+

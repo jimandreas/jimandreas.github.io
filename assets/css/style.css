@@ -13,14 +13,14 @@ body {
   color: #fff;
   font-size: 1.1em;
   line-height: 1.5;
-  text-align: center;
+  /*text-align: center;*/
 }
 
-img {
+/*img {
   display: block;
   width: 100%;
   height: auto;
-}
+}*/
 
 h1,
 h2,
@@ -34,7 +34,7 @@ p {
   padding: 1em 0;
 }
 
-.btn {
+/*.btn {
   display: inline-block;
   background: #333;
   color: #fff;
@@ -47,7 +47,7 @@ p {
 .btn:hover {
   background: #eaeaea;
   color: #333;
-}
+}*/
 
 /* Header Showcase */
 
