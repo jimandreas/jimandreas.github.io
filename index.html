@@ -4,9 +4,15 @@
     <meta charset="utf-8">
     <title>Jim Andreas intro</title>
     <link rel="stylesheet" media="screen" href="assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <style>
+
+<!--*************************************-->
+<!--  style the horizontal slider        -->
+<!--*************************************-->
+
 .gallery {
   position: relative;
   <!--max-width: 800px;-->
@@ -23,9 +29,10 @@
   display: flex;
   align-items: center;
 
-  height: 300px;
+  height: 400px;
+  width: 1200px;
 
-  font-size: 15px;
+  font-size: 1.0em;
   margin-left: 40px;
 
   /* Enable Safari touch scrolling physics which is needed for scroll snap */
@@ -48,46 +55,8 @@
   min-width: 75%;
   min-height: 95%;
   border-radius: 10px;
-  margin-left: 40px;   <!--This is nice - the first card clears the arrow!-->
+  margin-left: 40px;
  }
-
-.gallery div.note {
-  position: absolute;
-
-  /* vertically align center */
-  top:  50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
-
-  background: rgba(0,0,0, 0.6);
-  padding: 20px;
-  position: absolute;
-
-  font-size: 4em;
-  color: white;
-}
-
-<!--*************************************-->
-<!--  style the new item in the list     -->
-<!--*************************************-->
-
-.gallery div.newlist {
-  position: absolute;
-
-  /* vertically align center */
-  top:  50%;
-  transform: translateY(-50%);
-  left: 0;
-  right: 0;
-
-  background: rgba(0,0,0, 0.6);
-  padding: 20px;
-  position: absolute;
-
-  font-size: 4em;
-  color: white;
-}
 
 .gallery .btn {
   position: absolute;
@@ -128,8 +97,6 @@
 .gallery_scroller > div.colored_card:nth-of-type(10) { background-color: #1a237e; }
 
 </style>
-
-
 <body>
 
 <!-- Header Showcase -->
@@ -240,8 +207,6 @@
 
 
 <script>
-document.querySelector('#alignment_option').addEventListener('change', updateAlignment);
-
 const gallery = document.querySelector('#paginated_gallery');
 const gallery_scroller = gallery.querySelector('.gallery_scroller');
 const gallery_item_size = gallery_scroller.querySelector('div').clientWidth;
@@ -257,18 +222,6 @@ function scrollToNextPage() {
 function scrollToPrevPage() {
   gallery_scroller.scrollBy(-gallery_item_size, 0);
 }
-
-function updateAlignment(event) {
-  const alignment = event.target.value;
-  for (item of gallery.querySelectorAll('.gallery_scroller > div'))
-    item.style.scrollSnapAlign = alignment;
-
-  // Currently changing scroll alignment does not force a re-snap in Chrome.
-  // This is a bug: http://crbug.com/866127
-  // In meantime, if desired a scroll snap can be triggered using a small
-  // scripted scroll e.g.: `gallery_scroller.scrollBy(1, 0);`
-}
-
 </script>
 
 <!--Include an HTML sub-file-->
