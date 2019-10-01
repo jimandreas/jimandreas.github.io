@@ -156,7 +156,7 @@ img {
    /* snap mandatory on horizontal axis  */
   scroll-snap-type: x mandatory;
 
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
 
   display: flex;
@@ -164,7 +164,7 @@ img {
 
   height: 400px;
   font-size: 0.8em;
-  margin-left: 40px;
+  margin-left: 20px;
 
   /* Enable Safari touch scrolling physics which is needed for scroll snap */
   -webkit-overflow-scrolling: touch;
@@ -187,7 +187,7 @@ img {
   min-width: 40%;
   min-height: 95%;
   border-radius: 10px;
-  margin-left: 40px;
+  margin-left: 20px;
  }
 
 .gallery .btn {
