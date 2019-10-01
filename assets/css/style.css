@@ -22,6 +22,13 @@ a {color:#cc3300; text-decoration:underline;}
   padding: 0;
 }
 
+/*html {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 500px 0 0;
+}*/
+
 body {
   font-family: 'Catamaran', sans-serif;
   line-height: 1.0;
@@ -130,6 +137,8 @@ img {
   padding-top: 1em;
   padding-bottom: 2em;
   min-height: 500px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 <!--*************************************-->
@@ -137,9 +146,10 @@ img {
 <!--*************************************-->
 
 .gallery {
+
   position: relative;
-  <!--max-width: 800px;-->
   padding: 0 10;
+  width: 100%;
 }
 
 .gallery_scroller {
@@ -153,9 +163,7 @@ img {
   align-items: center;
 
   height: 400px;
-  width: 1200px;
-
-  font-size: 1.0em;
+  font-size: 0.8em;
   margin-left: 40px;
 
   /* Enable Safari touch scrolling physics which is needed for scroll snap */
@@ -176,7 +184,7 @@ img {
 }
 
 .gallery_scroller div.colored_card {
-  min-width: 25%;
+  min-width: 40%;
   min-height: 95%;
   border-radius: 10px;
   margin-left: 40px;
@@ -184,9 +192,8 @@ img {
 
 .gallery .btn {
   position: absolute;
-
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(10%);
 
   height: 30px;
   width: 30px;
