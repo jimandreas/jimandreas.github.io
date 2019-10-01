@@ -2,458 +2,277 @@
 <html lang="en">
 
 <head>
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <!--<link rel="stylesheet" href="../assets/css/style-horizontal-scrolling.css">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../assets/css/style-horizontal-scrolling.css">
 </head>
 
 <style>
-<!--*************************************-->
-<!--  style                              -->
-<!--*************************************-->
-
-:root {
-  --primary-color: #333;
-  --secondary-color: #444;
-  --overlay-color: rgba(0, 0, 0, 0.7);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
+html, body {
   padding: 0;
-}
-
-body {
-  font-family: 'Catamaran', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  font-size: 1.1rem;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  line-height: 1.3;
-}
-
-a {
-  color: #444;
-  text-decoration: none;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  width: 100%;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 2rem;
-}
-
-.navbar {
-  font-size: 1.2rem;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-}
-
-.navbar .container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
-}
-
-.navbar .logo {
-  font-size: 2rem;
-}
-
-.navbar ul {
-  justify-self: flex-end;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar a {
-  padding: 0 1rem;
-}
-
-.navbar a:hover {
-  color: #555;
-}
-
-.section-a {
-  margin: 2rem 0;
-}
-
-.section-a .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 3rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.section-a h1 {
-  font-size: 4rem;
-  color: var(--primary-color);
-}
-
-.section-a p {
-  margin: 1rem 0;
-}
-
-.section-b {
-  position: relative;
-  background: url('https://i.ibb.co/1RS1dqC/section-b.jpg') no-repeat bottom center/cover;
-  height: 600px;
-}
-
-.section-b-inner {
-  color: #fff;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: auto;
-  max-width: 860px;
-  padding: 5rem 0;
-}
-
-.section-b-inner h3 {
-  font-size: 2rem;
-}
-
-.section-b-inner h2 {
-  font-size: 5rem;
-  margin-top: 1rem;
-}
-
-.section-b-inner p {
-  margin-top: 1rem;
-  font-size: 1.5rem;
-}
-
-.section-c .gallery {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-}
-.section-c .gallery a:first-child {
-  /* grid-row-start: 1;
-  grid-row-end: 3; */
-  grid-row: 1/3;
-  grid-column: 1/3;
-}
-
-.section-c .gallery a:nth-child(2) {
-  grid-column-start: 3;
-  grid-column-end: 5;
-}
-
-.section-c .gallery img,
-.section-c .gallery a {
-  width: 100%;
-  height: 100%;
-}
-
-.section-footer {
-  background: var(--primary-color);
-  color: #fff;
-  padding: 4rem 0;
-}
-
-.section-footer .container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1rem;
-}
-
-.section-footer h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.section-footer h3 {
-  margin-bottom: 0.7rem;
-}
-
-.section-footer a {
-  line-height: 1.9;
-  color: #ccc;
-}
-
-.section-footer a > i {
-  color: #555;
-  margin-right: 0.5rem;
-}
-
-.email-form {
-  width: 100%;
-  display: inline-block;
-  background-color: #555;
-  position: relative;
-  border-radius: 20px;
-  line-height: 0;
-  margin-top: 1rem;
-}
-
-/* // .form-control-wrap {
-// 	position: relative;
-// 	display: inline-block;
-// 	width: 100%;
-// } */
-
-.email-form .form-control {
-  display: inline-block;
-  border: 0;
-  outline: 0;
-  font-size: 1rem;
-  color: #ddd;
-  background-color: transparent;
-  font-family: inherit;
-  margin: 0;
-  padding: 0 3rem 0 1.5rem;
-  width: 100%;
-  height: 45px;
-  border-radius: 20px;
-}
-
-.email-form .submit {
-  display: inline-block;
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 45px;
-  height: 45px;
-  background-color: #eee;
-  font-size: 1rem;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  border: 0;
-  color: #333;
-  cursor: pointer;
-  border-radius: 0 20px 20px 0;
-}
-
-.btn {
-  display: inline-block;
-  background: var(--primary-color);
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  border-radius: 30px;
-}
-
-.btn:hover {
-  background: var(--secondary-color);
-}
-
-.overlay {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
   left: 0;
-  background-color: var(--overlay-color);
+  right: 0;
+
+  font-size: 20px;
 }
 
-@media (max-width: 700px) {
-  .section-a .container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .section-a .container div:first-child {
-    order: 2;
-  }
-
-  .section-a .container div:nth-child(2) {
-    order: -1;
-  }
-
-  .section-a img {
-    width: 80%;
-    margin: auto;
-  }
-
-  .section-c .gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .section-c .gallery a:first-child {
-    grid-row: 1/1;
-    grid-column: 1/1;
-  }
-
-  .section-c .gallery a:nth-child(2) {
-    grid-column: 2/4;
-    grid-row: 2/2;
-  }
-
-  .section-c .gallery a:last-child {
-    display: none;
-  }
-
-  .section-footer {
-    padding: 2rem 0;
-  }
-  .section-footer .container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .section-footer div:nth-child(2),
-  .section-footer div:nth-child(3) {
-    display: none;
-  }
+.gallery {
+  position: relative;
+  max-width: 800px;
+  padding: 0 10;
 }
+
+.gallery_scroller {
+   /* snap mandatory on horizontal axis  */
+  scroll-snap-type: x mandatory;
+
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  display: flex;
+  align-items: center;
+
+  height: 500px;
+
+  font-size: 15px;
+  margin-left: 40px;
+
+  /* Enable Safari touch scrolling physics which is needed for scroll snap */
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.gallery_scroller div {
+   /* snap align center  */
+  scroll-snap-align: center;
+  margin: 10px;
+  position: relative;
+}
+
+.gallery_scroller img {
+  border-radius: 10px;
+}
+
+.gallery_scroller div.colored_card {
+  min-width: 75%;
+  min-height: 95%;
+  border-radius: 10px;
+  margin-left: 40px;   <!--This is nice - the first card clears the arrow!-->
+ }
+
+.gallery div.note {
+  position: absolute;
+
+  /* vertically align center */
+  top:  50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+
+  background: rgba(0,0,0, 0.6);
+  padding: 20px;
+  position: absolute;
+
+  font-size: 4em;
+  color: white;
+}
+
+<!--*************************************-->
+<!--  style the new item in the list     -->
+<!--*************************************-->
+
+.gallery div.newlist {
+  position: absolute;
+
+  /* vertically align center */
+  top:  50%;
+  transform: translateY(-50%);
+  left: 0;
+  right: 0;
+
+  background: rgba(0,0,0, 0.6);
+  padding: 20px;
+  position: absolute;
+
+  font-size: 4em;
+  color: white;
+}
+
+.gallery .btn {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: 30px;
+  width: 30px;
+
+  border-radius: 2px;
+  background-color: rgba(0,0,0,0.5);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  z-index: 1;
+}
+
+.gallery .btn.next {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M25.557 14.7L13.818 2.961 16.8 0l16.8 16.8-16.8 16.8-2.961-2.961L25.557 18.9H0v-4.2z" fill="%23FFF" fill-rule="evenodd"/></svg>');
+  right: 10px;
+}
+
+.gallery .btn.prev {
+  background-image: url('data:image/svg+xml;charset=utf-8,<svg width="18" height="18" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><title>Shape</title><path d="M33.6 14.7H8.043L19.782 2.961 16.8 0 0 16.8l16.8 16.8 2.961-2.961L8.043 18.9H33.6z" fill="%23FFF" fill-rule="evenodd"/></svg>');
+  left: 10px;
+}
+
+.gallery_scroller > div.colored_card:nth-of-type(1) { background-color: #e8eaf6; }
+.gallery_scroller > div.colored_card:nth-of-type(2) { background-color: #c5cae9; }
+.gallery_scroller > div.colored_card:nth-of-type(3) { background-color: #9fa8da; }
+.gallery_scroller > div.colored_card:nth-of-type(4) { background-color: #7986cb; }
+.gallery_scroller > div.colored_card:nth-of-type(5) { background-color: #5c6bc0; }
+.gallery_scroller > div.colored_card:nth-of-type(6) { background-color: #3f51b5; }
+.gallery_scroller > div.colored_card:nth-of-type(7) { background-color: #3949ab; }
+.gallery_scroller > div.colored_card:nth-of-type(8) { background-color: #303f9f; }
+.gallery_scroller > div.colored_card:nth-of-type(9) { background-color: #283593; }
+.gallery_scroller > div.colored_card:nth-of-type(10) { background-color: #1a237e; }
+
 </style>
 
-<nav class="navbar">
-    <div class="container">
-        <h1 class="logo">Phono</h1>
-        <ul class="nav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <!-- <li><a href="#specs">Specs</a></li>
-                      <li><a href="#contact">Contact</a></li> -->
-        </ul>
-    </div>
-</nav>
 
-<!-- Showcase -->
-<section class="section-a">
-    <div class="container">
-        <div>
-            <h1>The headphones of the future.</h1>
-            <p>
-                https://codepen.io/bradtraversy/pen/MNEgoJ
-                <br>
-                https://www.youtube.com/watch?v=61R5kn_kYwY
-            </p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-        <img src="https://i.ibb.co/37Y74kv/showcase.jpg" alt="" />
-    </div>
-</section>
+<p>Below is a gallery where every item is the same size and centered. </p>
+<label for="alignment">Alignment:</label>
+<select id="alignment_option">
+    <option value="start">Start</option>
+    <option value="center" selected>Center</option>
+    <option value="end">End</option>
+    <option value="none">None</option>
+</select>
 
-<!-- Large Text -->
-<section id="about" class="section-b">
-    <div class="overlay">
-        <div class="section-b-inner py-5">
-            <h3 class="text-2">Loud & Clear</h3>
-            <h2 class="text-5 mt-1">People Aren't Hearing All the Music</h2>
-            <p class="mt-1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-                repudiandae laboriosam quia, error tempore porro ducimus voluptate
-                laborum nostrum iure.
-            </p>
+<div id="paginated_gallery" class="gallery">
+    <div class="gallery_scroller">
+        <div class="colored_card" w3-include-html="newlist/n-2019-09-27-Peter_Walker.html">
+            <!--<p>
+            Hello world.-->
+            <!--<div w3-include-html="card-content-1.html"></div>-->
+            <!--<div class="newlist" w3-include-html="newlist/n-2019-09-27-Peter_Walker.html" width="480" height="480"></div>-->
         </div>
+        <div class="colored_card" w3-include-html="newlist/n-2019-09-27-Peter_Walker.html"> </div>
+        <div class="colored_card"> </div>
+        <div class="colored_card"> </div>
+        <div class="colored_card"> </div>
+        <div class="colored_card"> </div>
+        <div class="colored_card"> </div>
+        <div class="colored_card"> </div>
+        <div class="colored_card"> </div>
+        <div class="colored_card"> </div>
     </div>
-</section>
+    <span class="btn prev"></span>
+    <span class="btn next"></span>
+</div>
 
-<!-- Gallery -->
-<section class="section-c">
-    <div class="gallery">
-        <a href="https://i.ibb.co/CHLBZnp/gal2323.jpg" class="big"
-        ><img src="https://i.ibb.co/CHLBZnp/gal2323.jpg" alt=""
-        /></a>
-        <a href="https://i.ibb.co/4pBbhfY/gal39834.jpg" class="big"
-        ><img src="https://i.ibb.co/4pBbhfY/gal39834.jpg" alt=""
-        /></a>
-        <a href="https://i.ibb.co/xSnHP7g/gal43884.jpg" class="big"
-        ><img src="https://i.ibb.co/xSnHP7g/gal43884.jpg" alt=""
-        /></a>
-        <a href="https://i.ibb.co/QN6Bnrb/gal4958.jpg" class="big"
-        ><img src="https://i.ibb.co/QN6Bnrb/gal4958.jpg" alt=""
-        /></a>
-        <a href="https://i.ibb.co/dGZvj75/gal4545.jpg" class="big">
-            <img src="https://i.ibb.co/dGZvj75/gal4545.jpg" alt=""
-            /></a>
-        <a href="https://i.ibb.co/S6FVFNt/gal74744.jpg" class="big"
-        ><img src="https://i.ibb.co/S6FVFNt/gal74744.jpg" alt=""
-        /></a>
-    </div>
-</section>
 
-<!-- Footer -->
-<footer class="section-footer py-4 bg-primary">
-    <div class="container">
+<p>
+    CSS Scroll Snapping works well even when snap targets have different size or
+    when they are larger than the scroller!
+</p>
+<div class="gallery">
+    <div class="gallery_scroller">
         <div>
-            <h2 class="text-2 mb-1">Lorem ipsum dolor sit.</h2>
-            <a href="http://twitter.com">
-                <i class="fab fa-twitter fa-2x"></i>
-            </a>
-            <a href="http://facebook.com">
-                <i class="fab fa-facebook fa-2x"></i>
-            </a>
-            <a href="http://youtube.com">
-                <i class="fab fa-youtube fa-2x"></i>
-            </a>
+            <img src="https://placeimg.com/480/480/animals/grayscale">
         </div>
         <div>
-            <h3>Company Info</h3>
-            <ul>
-                <li><a href="#">All Products</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-            </ul>
+            <img src="https://placeimg.com/360/480/animals/grayscale">
         </div>
         <div>
-            <h3>Blog Posts</h3>
-            <ul>
-                <li><a href="#">Lorem ipsum dolor.</a></li>
-                <li><a href="#">Lorem ipsum dolor.</a></li>
-                <li><a href="#">Lorem ipsum dolor.</a></li>
-                <li><a href="#">Lorem ipsum dolor.</a></li>
-            </ul>
+            <img src="https://placeimg.com/640/480/animals/grayscale">
         </div>
         <div>
-            <h3>Subscribe</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
-            <form
-                    class="mt-1"
-                    name="email-form"
-                    method="POST"
-                    data-netlify="true"
-            >
-                <div class="email-form">
-              <span class="form-control-wrap"
-              ><input
-                      type="email"
-                      name="email"
-                      id="email"
-                      size="40"
-                      class="form-control"
-                      placeholder="E-mail"/></span
-              ><button type="submit" value="Submit" class="form-control submit">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-                </div>
-            </form>
+            <img src="https://placeimg.com/360/360/animals/grayscale">
+        </div>
+        <div>
+            <img src="https://placeimg.com/2560/960/animals/grayscale">
+            <div class="note">Image is larger than container so it can be panned freely.</div>
+        </div>
+        <div>
+            <img src="https://placeimg.com/480/480/animals/grayscale">
+        </div>
+        <div>
+            <img src="https://placeimg.com/360/360/animals/grayscale">
+        </div>
+        <div>
+            <img src="https://placeimg.com/640/480/animals/grayscale">
         </div>
     </div>
-</footer>
+</div>
+
 
 <script>
-$(function() {
-        const $gallery = $('.gallery a').simpleLightbox();
-      });
+document.querySelector('#alignment_option').addEventListener('change', updateAlignment);
+
+const gallery = document.querySelector('#paginated_gallery');
+const gallery_scroller = gallery.querySelector('.gallery_scroller');
+const gallery_item_size = gallery_scroller.querySelector('div').clientWidth;
+
+gallery.querySelector('.btn.next').addEventListener('click', scrollToNextPage);
+gallery.querySelector('.btn.prev').addEventListener('click', scrollToPrevPage);
+
+// For paginated scrolling, simply scroll the gallery one item in the given
+// direction and let css scroll snaping handle the specific alignment.
+function scrollToNextPage() {
+  gallery_scroller.scrollBy(gallery_item_size, 0);
+}
+function scrollToPrevPage() {
+  gallery_scroller.scrollBy(-gallery_item_size, 0);
+}
+
+function updateAlignment(event) {
+  const alignment = event.target.value;
+  for (item of gallery.querySelectorAll('.gallery_scroller > div'))
+    item.style.scrollSnapAlign = alignment;
+
+  // Currently changing scroll alignment does not force a re-snap in Chrome.
+  // This is a bug: http://crbug.com/866127
+  // In meantime, if desired a scroll snap can be triggered using a small
+  // scripted scroll e.g.: `gallery_scroller.scrollBy(1, 0);`
+}
+
+</script>
+
+<!--Include an HTML sub-file-->
+<!--https://www.w3schools.com/howto/howto_html_include.asp-->
+
+<script>
+function includeHTML() {
+  var z, i, elmnt, file, xhttp;
+  /* Loop through a collection of all HTML elements: */
+  z = document.getElementsByTagName("*");
+  for (i = 0; i < z.length; i++) {
+    elmnt = z[i];
+    /*search for elements with a certain atrribute:*/
+    file = elmnt.getAttribute("w3-include-html");
+    if (file) {
+      /* Make an HTTP request using the attribute value as the file name: */
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4) {
+          if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+          if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+          /* Remove the attribute, and call this function once more: */
+          elmnt.removeAttribute("w3-include-html");
+          includeHTML();
+        }
+      }
+      xhttp.open("GET", file, true);
+      xhttp.send();
+      /* Exit the function: */
+      return;
+    }
+  }
+}
+</script>
+
+<script>
+includeHTML();
 </script>
 
 </html>
