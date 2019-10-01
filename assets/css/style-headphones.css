@@ -2,6 +2,7 @@
   --primary-color: #333;
   --secondary-color: #444;
   --overlay-color: rgba(0, 0, 0, 0.7);
+  --wild-color: #ffff00;
 }
 
 * {
@@ -25,7 +26,7 @@ h4 {
 }
 
 a {
-  color: #444;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
@@ -72,7 +73,7 @@ img {
 }
 
 .navbar a:hover {
-  color: #555;
+  color: #55F;
 }
 
 .section-a {
@@ -275,6 +276,9 @@ img {
     margin: auto;
   }
 
+.section-b-inner h2 {
+    font-size: 2rem;
+}
   .section-c .gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
