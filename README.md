@@ -25,3 +25,6 @@ https://drafts.csswg.org/css-scroll-snap/
 ### How to - Include HTML
 https://www.w3schools.com/howto/howto_html_include.asp
 
+### Green Robot with binoculars
+https://www.pinterest.com/pin/510595676500356230/
+
