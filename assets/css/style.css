@@ -207,6 +207,10 @@ img {
     margin: 0;
     padding: 0;
   }
+
+  .boxes {
+    padding: 10px 50px;
+  }
 }
 
 
