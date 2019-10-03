@@ -7,6 +7,7 @@
   --light-color: #f4f4f4;
   --overlay-color: rgba(0, 0, 0, 0.7);
   --wild-color: #ffff00;
+  --shadow-color: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
 * {
@@ -18,9 +19,8 @@
 body {
   font-family: 'Catamaran', sans-serif;
   line-height: 1.0;
-  color: #333;
+  color: #FFF;
   background: #000;
-  color: #999;
   font-size: 1.0rem;
   -webkit-font-smoothing: antialiased;
 }
@@ -45,6 +45,7 @@ img {
   width: 100%;
 }
 
+/* for all container classes */
 .container {
   max-width: 1100px;
   margin: auto;
@@ -66,6 +67,7 @@ img {
 
 .navbar .logo {
   font-size: 2rem;
+  font-color: var(--light-color);
 }
 
 .navbar ul {
@@ -89,18 +91,88 @@ img {
 
 }
 
-#showcase .bg-image {
+/* showcase image set up to have responsive styling */
 
-  background: #333
+#showcase .bg-image {
+  background:
     url("../images/home-panel1-bg-2048x512.jpg");
   background-position: center center;
   background-size: cover;
   width: 100%;
   height: 256px;
   z-index: -1;
-  opacity: 0.4;
-
+  opacity: 0.7;
 }
+
+/**************/
+/* Categories */
+/**************/
+
+#categories .content-wrap {
+  padding: 0 1.5em;
+}
+
+#categories {
+  padding: 2em 1em 1em;
+}
+
+#categories ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#categories li {
+  margin-bottom: 1em;
+  background: #fff;
+  color: #333;
+}
+
+#categories img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, minmax(auto, 25em)) 1fr;
+}
+
+/* Boxes - NICE - when the box width drops below 300
+   this changes the grid to one column.  Nice reponsiveness!
+ */
+.boxes {
+  padding: 20px 150px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.box {
+  background: var(--dark-color);
+  text-align: center;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-color);
+}
+
+
+#categories ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+#categories ul {
+  grid-column: 2/5;
+}
+
+#categories li {
+  width: 31%;
+}
+.card-content {
+  padding: 1.5em;
+}
+
 
 @media (max-width: 1000px) {
 
@@ -111,6 +183,10 @@ img {
   #showcase .bg-image {
       width: 100%;
       height: 192px;
+  }
+
+   .categories ul {
+    grid-template-columns: 1fr;
   }
 
 }
@@ -125,5 +201,13 @@ img {
     width: 100%;
     height: 128px;
   }
+
+  #categories ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 }
+
+
 

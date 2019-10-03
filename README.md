@@ -5,7 +5,7 @@ Experimental web page(s) repo
 
 is based on this excellent approach:
 <br>
-[Grid CSS Responsive Website Layout - "Mobile First" Design](https://www.youtube.com/watch?v=M3qBpPw77qo)
+[Product Landing Page | Build & Deploy | HTML & CSS](https://www.youtube.com/watch?v=61R5kn_kYwY)
 <br>
 by:
 <br>
@@ -18,9 +18,6 @@ Follow the BBC guidelines:
 
 ### Responsive Web Design Intro
 https://www.w3schools.com/css/css_rwd_intro.asp
-
-### Horizontal scrolling
-https://drafts.csswg.org/css-scroll-snap/
 
 ### How to - Include HTML
 https://www.w3schools.com/howto/howto_html_include.asp
