@@ -173,6 +173,34 @@ img {
   padding: 1.5em;
 }
 
+/**************************
+ * Footer
+ **************************/
+
+.section-footer {
+  color: #fff;
+
+}
+.section-footer .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  padding: 5px 100px;
+}
+.section-footer h3 {
+  margin-bottom: 0.7rem;
+}
+.section-footer a > svg {
+  color: #508C2B;
+  margin-right: 0.5rem;
+  width: 40px;
+  height: 40px;
+}
+
+.icons {
+  margin-left: 100px;
+  width: 200px;
+}
 
 @media (max-width: 1000px) {
 
@@ -210,6 +238,18 @@ img {
 
   .boxes {
     padding: 10px 50px;
+  }
+
+  .section-footer {
+    padding: 2rem 0;
+  }
+
+  .section-footer .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    grid-gap: 1rem;
+    padding: 5px 50px;
+    }
   }
 }
 

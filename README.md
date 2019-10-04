@@ -18,10 +18,21 @@ Follow the BBC guidelines:
 
 ### Responsive Web Design Intro
 https://www.w3schools.com/css/css_rwd_intro.asp
+<br>
+[Realizing common layouts using CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout)
+<br>
+[Grid (Malven.co)](http://grid.malven.co/)
+
 
 ### How to - Include HTML
 https://www.w3schools.com/howto/howto_html_include.asp
 
 ### Green Robot with binoculars
 https://www.pinterest.com/pin/510595676500356230/
+
+### FontAwesome
+https://fontawesome.com/icons/twitter?style=brands
+
+#### FontAwesome license:
+https://fontawesome.com/license
 
