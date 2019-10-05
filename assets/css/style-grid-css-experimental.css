@@ -13,10 +13,10 @@ html {
 }
 
 body {
-  background: #ccc;
-  margin: 30px 50px;
-  line-height: 1.4;
-}
+   background: #ccc;
+   margin: 30px 50px;
+   line-height: 1.4;
+ }
 
 .btn {
   background: var(--dark);
