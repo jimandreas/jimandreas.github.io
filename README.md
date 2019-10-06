@@ -36,3 +36,7 @@ https://fontawesome.com/icons/twitter?style=brands
 #### FontAwesome license:
 https://fontawesome.com/license
 
+### Sharing a link to twitter:
+https://stackoverflow.com/questions/40980648/twitter-share-button-does-not-display-twitter-card
+
+
