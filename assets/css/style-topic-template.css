@@ -43,8 +43,6 @@ img {
   width: 100%;
 }
 
-
-
 /* for all container classes */
 .container {
   max-width: 1100px;
@@ -112,9 +110,11 @@ img {
   padding: 0 1rem;
   box-shadow: 0px 0px 10px 5px rgba(112,112,112,1);
 }
-.content-card .twitter-share-button {
+.content-card a {
   color: #000;
-  padding-left: 1rem;
+}
+.content-card a:hover {
+  color: #55F;
 }
 .content-subject {
   padding-left: 3rem;

@@ -3,67 +3,137 @@
 <head>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <title>Jim Andreas intro</title>
-  <link rel="stylesheet" media="screen" href="assets/css/style.css">
+
+  <title>PAGE TEMPLATE</title>
+
+  <link rel="stylesheet" media="screen" href="../assets/css/style-topic-template.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 
+<!--Nav bar-->
 <nav class="navbar">
   <div class="container">
-    <h1 class="logo">An Android view on molecules</h1>
-    <ul class="nav">
-      <li><a href="#about">About</a></li>
-    </ul>
+    <div class="logo-graphic">
+      <img src="../assets/images/home-panel1-bg-2048x512.jpg" alt="">
+    </div>
+    <h1 class="logo">A Page On Some Theme</h1>
+    <div class="nav">
+      <a href="https://jimandreas.github.io">Home</a>
+    </div>
   </div>
 </nav>
 
-<!-- Header Showcase -->
-<header id="showcase">
-  <div class="bg-image"></div>
-</header>
+<!--Content template,
+    title
+    composition splits into two columns
+    Move left column on top for narrow screens.
+    -->
 
-<!-- work categories -->
+<div class="content-card">
+  <a href="page-template.html">
+    <h2 id="subject1" class="content-subject">
+      FIRST subject goes here
+    </h2>
+    <div class="content">
+      <div class="title">
 
-<div class="boxes">
-  <div class="box">
-    <a href="./content/topic-template.html">
-      <img src="./assets/images/TQ2-1.png" alt="">
-      <div class="card-content">
-        <h3 class="card-title">Molecular Biology</h3>
+        <div class="date-and-graphic">
+          <p>
+            October 4, 2019
+          </p>
+          <img src="../assets/images/TQ2-1.png" alt="">
+        </div>
+      </div>
+      <div class="composition">
         <p>
-          Description and links to Molecular Biology area.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
         </p>
       </div>
-    </a>
-  </div>
-
-  <div class="box">
-    <a href="./content/topic-template.html">
-      <img src="./assets/images/TQ2-2.png" alt="">
-      <div class="card-content">
-        <h3 class="card-title">OpenGL graphics</h3>
-        <p>
-          Description and links to OpenGL graphics area.
-        </p>
-      </div>
-    </a>
-  </div>
-
-  <div class="box">
-    <a href="./content/topic-template.html">
-      <img src="./assets/images/TQ2-3.png" alt="">
-      <div class="card-content">
-        <h3 class="card-title">Android and Kotlin</h3>
-        <p>
-          Description and links to Android and Kotlin area.
-        </p>
-      </div>
-    </a>
-  </div>
-
+    </div>
+  </a>
 </div>
+<!--END first subject-->
 
+<pre>
+
+
+</pre>
+
+<div class="content-card">
+  <a href="page-template.html">
+    <h2 id="subject2" class="content-subject">
+      SECOND subject goes here
+    </h2>
+    <div class="content">
+      <div class="title">
+
+        <div class="date-and-graphic">
+          <p>
+            October 1, 2019
+          </p>
+          <img src="../assets/images/TQ2-2.png" alt="">
+        </div>
+      </div>
+      <div class="composition">
+        <p>
+          This is an older article further down.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+<!--END second subject-->
+
+<pre>
+
+
+</pre>
+
+<div class="content-card">
+  <a href="page-template.html">
+    <h2 id="subject3" class="content-subject">
+      THIRD subject goes here
+    </h2>
+    <div class="content">
+      <div class="title">
+
+        <div class="date-and-graphic">
+          <p>
+            October 1, 2019
+          </p>
+          <img src="../assets/images/TQ2-3.png" alt="">
+        </div>
+      </div>
+      <div class="composition">
+        <p>
+          This is an older article further down.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+          This is a descriptive sentence.
+        </p>
+      </div>
+    </div>
+  </a>
+</div>
+<!--END third subject-->
 
 <!-- Footer -->
 <div class="section-footer">
@@ -77,7 +147,7 @@
           src="http://cdn.rcsb.org/rcsb-pdb/v2/about-us/wwpdb.png"></a></li>
       </ul>
     </div>
-    <div>
+    <div class="other-links">
       <h3 class="text-2 mb-1">Other places:</h3>
       <a href="https://twitter.com/jimandreasdev">
         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
@@ -109,6 +179,5 @@
     </div>
   </div>
 </div>
-
 </body>
 </html>
