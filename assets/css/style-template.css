@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.0;
   color: #FFF;
   background: #000;
@@ -42,6 +42,8 @@ ul {
 img {
   width: 100%;
 }
+
+
 
 /* for all container classes */
 .container {
@@ -103,13 +105,16 @@ img {
  **************************/
 .content-card {
   background: var(--primary);
-  box-shadow: var(--shadow);
   color: #000;
   max-width: 1100px;
   margin: auto;
   overflow: hidden;
   padding: 0 1rem;
   box-shadow: 0px 0px 10px 5px rgba(112,112,112,1);
+}
+.content-card .twitter-share-button {
+  color: #000;
+  padding-left: 1rem;
 }
 .content-subject {
   padding-left: 3rem;

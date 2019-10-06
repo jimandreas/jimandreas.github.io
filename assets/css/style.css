@@ -1,28 +1,22 @@
 /* Global Styles */
 :root {
-
-  --primary-color: #333;
-  --secondary-color: #444;
-  --dark-color: #141414;
   --light-color: #f4f4f4;
-  --overlay-color: rgba(0, 0, 0, 0.7);
-  --wild-color: #ffff00;
-  --shadow-color: 0 1px 5px rgba(104, 104, 104, 0.8);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
 }
 
 body {
-  font-family: 'Catamaran', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.0;
   color: #FFF;
   background: #000;
   font-size: 1.0rem;
   -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  padding-inline-start: 0px;
 }
 
 h1,
@@ -53,19 +47,16 @@ img {
   padding: 0 2rem;
 }
 
-.navbar {
-  font-size: 1.2rem;
-  padding-top: 0.3rem;
-  padding-bottom: 0.3rem;
-}
-
 .navbar .container {
+  max-width: 1100px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
+  padding: 0em 10em;
 }
 
 .navbar .logo {
+  grid-column: 1/4;
   font-size: 2rem;
   font-color: var(--light-color);
 }
@@ -108,37 +99,6 @@ img {
 /* Categories */
 /**************/
 
-#categories .content-wrap {
-  padding: 0 1.5em;
-}
-
-#categories {
-  padding: 2em 1em 1em;
-}
-
-#categories ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-#categories li {
-  margin-bottom: 1em;
-  background: #fff;
-  color: #333;
-}
-
-#categories img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr repeat(3, minmax(auto, 25em)) 1fr;
-}
-
 /* Boxes - NICE - when the box width drops below 300
    this changes the grid to one column.  Nice reponsiveness!
  */
@@ -146,31 +106,25 @@ img {
   padding: 20px 150px;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
-.box {
-  background: var(--dark-color);
+.boxes .box {
   text-align: center;
-  padding: 1.5rem 2rem;
-  box-shadow: var(--shadow-color);
+  padding: 1rem 1rem;
+  background: var(--primary);
+  color: #000;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 1rem;
+  box-shadow: 0px 0px 10px 5px rgba(112,112,112,1);
 }
 
-
-#categories ul {
-  display: flex;
-  justify-content: space-around;
+.boxes a {
+  color: #000;
 }
-
-#categories ul {
-  grid-column: 2/5;
-}
-
-#categories li {
-  width: 31%;
-}
-.card-content {
-  padding: 1.5em;
+.boxes a:hover {
+  color: #55F;
 }
 
 /**************************
@@ -198,46 +152,46 @@ img {
 }
 
 .icons {
-  margin-left: 100px;
+  margin-left: 50px;
   width: 200px;
 }
 
 @media (max-width: 1000px) {
 
   .navbar .logo {
-    font-size: 1rem;
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    margin-block-start: 0em;
   }
 
   #showcase .bg-image {
       width: 100%;
       height: 192px;
   }
-
-   .categories ul {
-    grid-template-columns: 1fr;
-  }
-
 }
 
 @media (max-width: 700px) {
 
-  #showcase {
-    padding: 0em 0em;
+  .navbar .logo {
+    font-size: 1.0rem;
   }
 
   #showcase .bg-image {
     width: 100%;
-    height: 128px;
-  }
-
-  #categories ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    height: 64px;
   }
 
   .boxes {
-    padding: 10px 50px;
+    padding: 10px 200px;
+    grid-template-columns: 1fr;
+  }
+  .boxes .box {
+    padding: 0rem 0rem;
+  }
+  .card-content {
+    padding: 0.5em;
   }
 
   .section-footer {
@@ -248,7 +202,7 @@ img {
     grid-template-columns: 1fr;
     text-align: center;
     grid-gap: 1rem;
-    padding: 5px 50px;
+
     }
   }
 }
