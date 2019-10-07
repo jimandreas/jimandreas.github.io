@@ -39,10 +39,6 @@ ul {
   list-style: none;
 }
 
-img {
-  width: 100%;
-}
-
 p {
   margin-bottom:1.5em
 }
@@ -134,9 +130,9 @@ p {
   grid-column: 2/7;
 }
 .date-and-graphic img {
-  width: 100px;
-  height: 100px;
-}
+   width: 150px;
+   height: 79px;
+ }
 
 
 /**************************
@@ -209,9 +205,10 @@ p {
     grid-template-columns: 1fr;
   }
   .date-and-graphic img {
-    width: 80px;
-    height: 80px;
-  }
+     width: 150px;
+     height: 79px;
+   }
+
   .composition {
     grid-column: 1/2;
   }

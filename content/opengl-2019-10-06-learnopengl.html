@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+  <title>Android and OpenGL</title>
+  <meta property="og:url" content="http://jimandreas.github.com/content/opengl-2019-10-06-learnopengl.html"/>
+  <meta property="og:description" content="Resources for learning OpenGL on Android systems."/>
+  <meta property="og:image" content="http://jimandreas.github.io/assets/images/TQ2-1.png">
+
+  <link rel="stylesheet" media="screen" href="../assets/css/style-page-template.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="Summary goes here">
+  <meta name="twitter:site" content="@jimandreasdev">
+  <meta name="twitter:creator" content="@jimandreasdev">
+
+</head>
+<body>
+
+<!--Nav bar-->
+<nav class="navbar">
+  <div class="container">
+    <div class="logo-graphic">
+      <img src="../assets/images/home-panel1-bg-2048x512.jpg" alt="">
+    </div>
+
+    <h1 class="logo">OpenGL</h1>
+
+    <div class="nav">
+      <a href="https://jimandreas.github.io">Home</a>
+    </div>
+  </div>
+</nav>
+
+<!--Content template,
+    title
+    composition splits into two columns
+    Move left column on top for narrow screens.
+    -->
+
+<div class="content-card">
+  <h2 id="subject1" class="content-subject">
+    Learning OpenGL (and implementing it on Android!!)
+  </h2>
+  <div class="content">
+    <div class="title">
+
+      <div class="date-and-graphic">
+        <p>
+          October 6, 2019
+        </p>
+        <img src="../assets/images/opengl-2019-10-06-asteroids.jpg" alt="">
+      </div>
+    </div>
+    <div class="composition">
+      This is a description of a yet-another series of exercies in learning OpenGL and implementing
+      the technology on Android.  The results of the exercies are available in a repository ("repo")
+      on github at the location:  http://github.com/jimandreas/AndroidLearnOpenGL
+
+      <h2 id="building">Building</h2>
+
+      <p>This repo is set up to build using Android Studio 3.5 or greater. It is written
+        in Kotlin. It is important to build the project before looking at the code closely
+        in Android Studio. Both the Data Binding and the Navigator frameworks generate code
+        that is called directly by the project. <b>These calls will show as undefined before the
+          project is built!!</b></p>
+
+      <h2 id="emulatorsanddevices">Emulators and devices</h2>
+
+      <p>When displaying in an emulator - enable the higher level of OpenGL ES.</p>
+
+      <p>GLESDynamicVersion = on</p>
+
+      <p>to ~/.android/advancedFeatures.ini </p>
+
+      <p>For more information on this emulator configuration see the MISC.md file.</p>
+
+      <h2 id="currentstatus">Current Status</h2>
+
+      <p>Exercises are operational through Instancing. Basic camera manipulation is
+        included and is implemented only for movement in the x and z direction.
+        The camera movement leverages the Quaternion implementation of Rajawali.</p>
+
+      <h2 id="architecturediagram">Architecture diagram</h2>
+
+      <p><img src="../assets/images/opengl-2019-10-06-OpenGLwithLiveDataArchitecture.png" width="512"></p>
+
+      <h2 id="samplescreenshot">Sample Screenshot</h2>
+
+      <p><img src="../assets/images/opengl-2019-10-06-CameraExercise.png" width="385"></p>
+
+      <h1 id="exercisedescriptions">Exercise Descriptions</h1>
+
+      <p>The project implements the following exercises in descending complexity. The exercises are adapted
+        for Android, OpenGL ES3+, and are implemented in Kotlin.</p>
+
+      <p>It also borrows from
+        the camera.h located at:</p>
+
+      <p>https://learnopengl.com/code<em>viewer</em>gh.php?code=includes/learnopengl/camera.h</p>
+
+      <h2 id="renderer4103advancedasteroidsinstanced">Renderer4103AdvancedAsteroidsInstanced</h2>
+
+      <p>Tutorial URL: https://learnopengl.com/Advanced-OpenGL/Instancing</p>
+
+      <p>Code link URL:
+        https://learnopengl.com/code<em>viewer</em>gh.php?code=src/4.advanced<em>opengl/10.3.asteroids</em>instanced/asteroids_instanced.cpp
+      </p>
+
+      <p>Uses a Matrix4 instance array and the associated hacks to set up 4 vector4 attributes to import the
+        Matrix4 into the shader. TODO: replace this ugly hack with a modern buffer if that works
+        in the emulator and phone.</p>
+
+      <h2 id="renderer4102instancinghacking">Renderer4102InstancingHacking</h2>
+
+      <p>No tutorial for this - this was a variation on "Renderer4101InstancingQuads" to add an OBJ based
+        rendering with an instanced based renderer and work through the shader mechanics.</p>
+
+      <p>This works for hacking the patches based on instance:</p>
+
+      <pre><code>void main()
+{
+    fColor = aColor;
+    float myfloat = float(gl_InstanceID+1);
+    vec2 pos = aPos * myfloat;
+    gl_Position = vec4(pos + aOffset, 0.0, 1.0);
+}
+</code></pre>
+
+      <h2 id="renderer480advancedglslubo">Renderer480AdvancedGlslUBO</h2>
+
+      <p>Tutorial URL: https://learnopengl.com/Advanced-OpenGL/Advanced-GLSL</p>
+
+      <p>Code link URL: https://learnopengl.com/code<em>viewer</em>gh.php?code=src/4.advanced<em>opengl/8.advanced</em>glsl<em>ubo/advanced</em>glsl_ubo.cpp
+      </p>
+
+      <p>Use of simple Uniform Buffer Object - in this case to pass in the
+        projection and view matrices to the common shader.</p>
+
+      <pre><code>layout (std140) uniform Matrices
+{
+    mat4 projection;
+    mat4 view;
+};
+</code></pre>
+
+      <p>Notes: code needs further cleanup as I left parts of the instancing project in the
+        original for use in debugging. This should get stripped out at some point.</p>
+
+      <h2 id="renderer242lightingmapspluscubeobject">Renderer242LightingMapsPlusCubeObject</h2>
+
+      <p>No tutorial for this. It is a variation on Renderer242LightingMapsSpecular
+        and adds in an OBJ based cube to test integration of OBJ rendering into the scene.</p>
+
+      <h2 id="renderer242lightingmapsspecular">Renderer242LightingMapsSpecular</h2>
+
+      <p>Tutorial URL: https://learnopengl.com/Lighting/Lighting-maps</p>
+
+      <p>Code link URL: https://learnopengl.com/code<em>viewer</em>gh.php?code=src/2.lighting/4.2.lighting<em>maps</em>specular<em>map/lighting</em>maps_specular.cpp
+      </p>
+
+      <p>Excellent tutorial on lighting combined with textures.</p>
+
+      <h2 id="renderer174camera">Renderer174Camera</h2>
+
+      <p>Tutorial URL: https://learnopengl.com/Getting-started/Camera</p>
+
+      <p>Code link URL: https://learnopengl.com/code<em>viewer</em>gh.php?code=src/1.getting<em>started/7.4.camera</em>class/camera_class.cpp
+      </p>
+
+      <h2 id="renderer163coordinatesystems">Renderer163CoordinateSystems</h2>
+
+      <p>Tutorial URL: https://learnopengl.com/Getting-started/Coordinate-Systems</p>
+
+      <p>Code link URL:
+        https://learnopengl.com/code<em>viewer</em>gh.php?code=src/1.getting<em>started/6.3.coordinate</em>systems<em>multiple/coordinate</em>systems_multiple.cpp
+      </p>
+
+      <h2 id="renderer121hellotriangle">Renderer121HelloTriangle</h2>
+
+      <p>Tutorial URL: https://learnopengl.com/Getting-started/Hello-Triangle</p>
+
+      <p>Code link URL: https://learnopengl.com/code<em>viewer</em>gh.php?code=src/1.getting<em>started/2.1.hello</em>triangle/hello_triangle.cpp
+      </p>
+
+      <p>The "hello world" basics in the learnopengl.com style. But adapted to Android and
+        OpenGL ES and Kotlin instead of a PC and a GPU and C++.</p>
+
+      <h2 id="googlesamplerenderer">GoogleSampleRenderer</h2>
+
+      <p>Android OpenGL Triangle and Square sample</p>
+
+      <p>Tutorial URL: https://developer.android.com/training/graphics/opengl</p>
+
+      <p>This is the basic "Hello Opengl" introduction - just the basics. It is included for
+        comparisons to code styling to the learnopengl methodology.</p>
+
+      <h1 id="projectnotes">Project notes</h1>
+
+      <h2 id="androidframework">Android Framework</h2>
+
+      <p>The Android application framework is one Activity and multiple Fragments - one for each major section
+        in the learnopengl "coursework". The framework also includes modern Android techniques - more
+        can be learned about these techniques in the excellent Udacity course:</p>
+
+      <p>https://classroom.udacity.com/courses/ud9012</p>
+
+      <ul>
+        <li>Databinding</li>
+
+        <li>ViewModel with LiveData controls</li>
+      </ul>
+
+      <h2 id="importedcontent">Imported content</h2>
+
+      <p>The project does not use any supporting graphics libraries aside what is built into the
+        Android Framework. The math support is provided by the Rajawali Math modules.
+        The modules are converted to kotlin and are located in the java/org/rejawali3d subtree.</p>
+
+      <p>See also the Github repo:</p>
+
+      <p>https://github.com/Rajawali/Rajawali</p>
+    </div>
+  </div>
+  <a class="twitter-share-button" target="_blank"
+     href=
+       "https://twitter.com/intent/tweet?text=A%20description%20for%20subject%201&url=https://jimandreas.github.io/content/page-template.html">
+    Tweet</a>
+</div>
+<!--END first subject-->
+
+
+<!-- Footer -->
+<div class="section-footer">
+  <div class="container">
+    <div class="icons">
+      <h3>Favorite places:</h3>
+      <ul>
+        <li><a href="https://pdb101.rcsb.org/"><img src="https://cdn.rcsb.org/pdb101/common/images/logo-pdb101.png"></a>
+        </li>
+        <li><a href="http://www.rcsb.org/pages/about-us/index"><img
+          src="http://cdn.rcsb.org/rcsb-pdb/v2/about-us/wwpdb.png"></a></li>
+      </ul>
+    </div>
+    <div class="other-links">
+      <h3 class="text-2 mb-1">Other places:</h3>
+      <a href="https://twitter.com/jimandreasdev">
+        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+             class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 512 512">
+          <path fill="currentColor"
+                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+        </svg>
+      </a>
+
+      <a href="https://www.linkedin.com/in/jimandreas">
+        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin"
+             class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 448 512">
+          <path fill="currentColor"
+                d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path>
+        </svg>
+      </a>
+
+      <a href="https://github.com/jimandreas">
+        <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github"
+             class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+             viewBox="0 0 496 512">
+          <path fill="currentColor"
+                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+        </svg>
+      </a>
+
+    </div>
+  </div>
+</div>
+</body>
+</html>
