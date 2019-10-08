@@ -198,27 +198,24 @@ p {
   }
 
   .content-card .content {
-    grid-template-columns: 1fr;
+    grid-template-column: repeat(auto-fit, minmax(100px, 1fr));
   }
   .date-and-graphic img {
      width: 150px;
      height: 79px;
    }
-
   .composition {
-    grid-column: 1/2;
+    grid-column: 1/7;
   }
 
   .section-footer {
     padding: 2rem 0;
   }
-
   .section-footer .container {
     grid-template-columns: 1fr;
     text-align: center;
     grid-gap: 1rem;
-
-    }
+   }
 }
 
 @media (max-width: 500px) {
@@ -233,7 +230,6 @@ p {
   .navbar .logo-graphic img {
       width: 100%;
       height: 100%;
-
   }
   .navbar .logo {
     padding: 0px 0px;
@@ -241,7 +237,6 @@ p {
   .navbar .nav {
     padding: 0px 0px;
   }
-
 
   .content-subject {
     padding-left: 0.25rem;
