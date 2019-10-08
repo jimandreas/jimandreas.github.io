@@ -113,19 +113,23 @@ p {
 .content-subject {
   padding-left: 3rem;
 }
+.date-and-graphic img {
+   width: 150px;
+   height: 79px;
+ }
 .content {
   padding: 1rem;
   display: grid;
   grid-gap: 15px;
   grid-template-columns: repeat(6, 1fr);
 }
+.content img {
+  width: 100%;
+}
 .composition {
   grid-column: 2/7;
 }
-.date-and-graphic img {
-   width: 150px;
-   height: 79px;
- }
+
 
 
 /**************************
@@ -219,8 +223,14 @@ p {
 }
 
 @media (max-width: 500px) {
+  .content-card {
+    padding: 0 0;
+  }
+  .content {
+    padding: 0;
+  }
   .body {
-    margin: 10px 10px;
+    margin: 0px 0px;
   }
   .navbar .container {
     grid-template-columns: 1fr;
@@ -239,7 +249,15 @@ p {
   }
 
   .content-subject {
-    padding-left: 0.25rem;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+  }
+
+  .section-footer {
+       padding: 0 0.1rem;
+   }
+  .section-footer .container {
+    padding: 5px 10px;
   }
 
 }
