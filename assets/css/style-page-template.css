@@ -6,6 +6,11 @@
   --light: #fff;
 }
 
+em.seo, strong.seo {
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.0;
@@ -106,6 +111,10 @@ p {
 .content-card .twitter-share-button {
   color: #000;
   padding-left: 1rem;
+}
+.content-card a {
+  color: #00aced;
+  text-decoration: none;
 }
 .content-card a:hover {
   color: #55F;
@@ -229,15 +238,16 @@ p {
 }
 
 @media (max-width: 500px) {
+  body {
+    margin: 0px 5px;
+  }
   .content-card {
     padding: 0 0;
   }
   .content {
     padding: 0;
   }
-  .body {
-    margin: 0px 0px;
-  }
+
   .navbar .container {
     grid-template-columns: 1fr;
     grid-gap: 0rem;

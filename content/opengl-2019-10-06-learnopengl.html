@@ -12,8 +12,8 @@
   <meta name="twitter:site" content="@jimandreasdev">
   <meta name="twitter:creator" content="@jimandreasdev">
 
-  <meta property="og:description" content="Resources for learning OpenGL on Android systems.">
-  <meta name="twitter:title" content="Resources for learning OpenGL on Android systems.">
+  <meta property="og:description" content="Learning OpenGL on Android systems.">
+  <meta name="twitter:title" content="Learning OpenGL on Android systems.">
   <meta name="twitter:description" content="Resources for learning OpenGL on Android systems.">
   <meta name="twitter:image" content="https://jimandreas.github.io/assets/images/opengl-2019-10-06-asteroids.jpg">
 
@@ -56,163 +56,31 @@
       </div>
     </div>
     <div class="composition">
-      This is a description of a yet-another series of exercies in learning OpenGL and implementing
-      the technology on Android.  The results of the exercises are available in a repository ("repo")
-      on github at the location:  <a href="https://github.com/jimandreas/AndroidLearnOpenGL">here.</a>
+      For a more advanced and more up-to-date series of exercises in learning OpenGL -
 
-      <h2 id="building">Building</h2>
+      <a href="https://joeydevries.com" target="_blank">
+        Joey de Vries
+      </a>
+      has authored a comprehensive series of exercises and provided them online.   See the following
+      link to get started.
 
-      <p>This repo is set up to build using Android Studio 3.5 or greater. It is written
-        in Kotlin. It is important to build the project before looking at the code closely
-        in Android Studio. Both the Data Binding and the Navigator frameworks generate code
-        that is called directly by the project. <b>These calls will show as undefined before the
-          project is built!!</b></p>
+      <p><b>
+        <a href="https://learnopengl.com/" target="_blank">
+          https://learnopengl.com/
+        </a></b></p>
 
-      <h2 id="emulatorsanddevices">Emulators and devices</h2>
-
-      <p>When displaying in an emulator - enable the higher level of OpenGL ES.</p>
-
-      <p>GLESDynamicVersion = on</p>
-
-      <p>to ~/.android/advancedFeatures.ini </p>
-
-      <p>For more information on this emulator configuration see the MISC.md file.</p>
-
-      <h2 id="currentstatus">Current Status</h2>
-
-      <p>Exercises are operational through Instancing. Basic camera manipulation is
-        included and is implemented only for movement in the x and z direction.
-        The camera movement leverages the Quaternion implementation of Rajawali.</p>
-
-      <h2 id="architecturediagram">Architecture diagram</h2>
-
-      <p><img src="../assets/images/opengl-2019-10-06-OpenGLwithLiveDataArchitecture.png" width="512"></p>
-
-      <h2 id="samplescreenshot">Sample Screenshot</h2>
-
-      <p><img src="../assets/images/opengl-2019-10-06-CameraExercise.png" width="385"></p>
-
-      <h1 id="exercisedescriptions">Exercise Descriptions</h1>
-
-      <p>The project implements the following exercises in descending complexity. The exercises are adapted
-        for Android, OpenGL ES3+, and are implemented in Kotlin.</p>
-
-      <p>It also borrows from
-        the camera.h located at:</p>
-
-      <p>https://learnopengl.com/code<em>viewer</em>gh.php?code=includes/learnopengl/camera.h</p>
-
-      <h2 id="renderer4103advancedasteroidsinstanced">Renderer4103AdvancedAsteroidsInstanced</h2>
-
-      <p>Tutorial URL: https://learnopengl.com/Advanced-OpenGL/Instancing</p>
-
-      <p>Code link URL:
-        https://learnopengl.com/code<em>viewer</em>gh.php?code=src/4.advanced<em>opengl/10.3.asteroids</em>instanced/asteroids_instanced.cpp
+      <p>
+      The exercises designed by Mr. de Vries are coded in C++.
+        I have recoded some of them in Kotlin and adapted them to the Android
+        system.   Here is a link to the Github repo where a selection of the exercises are
+        completed.
       </p>
 
-      <p>Uses a Matrix4 instance array and the associated hacks to set up 4 vector4 attributes to import the
-        Matrix4 into the shader. TODO: replace this ugly hack with a modern buffer if that works
-        in the emulator and phone.</p>
 
-      <h2 id="renderer4102instancinghacking">Renderer4102InstancingHacking</h2>
-
-      <p>No tutorial for this - this was a variation on "Renderer4101InstancingQuads" to add an OBJ based
-        rendering with an instanced based renderer and work through the shader mechanics.</p>
-
-      <p>This works for hacking the patches based on instance:</p>
-
-      <pre><code>void main()
-{
-    fColor = aColor;
-    float myfloat = float(gl_InstanceID+1);
-    vec2 pos = aPos * myfloat;
-    gl_Position = vec4(pos + aOffset, 0.0, 1.0);
-}
-</code></pre>
-
-      <h2 id="renderer480advancedglslubo">Renderer480AdvancedGlslUBO</h2>
-
-      <p>Tutorial URL: https://learnopengl.com/Advanced-OpenGL/Advanced-GLSL</p>
-
-      <p>Code link URL: https://learnopengl.com/code<em>viewer</em>gh.php?code=src/4.advanced<em>opengl/8.advanced</em>glsl<em>ubo/advanced</em>glsl_ubo.cpp
-      </p>
-
-      <p>Use of simple Uniform Buffer Object - in this case to pass in the
-        projection and view matrices to the common shader.</p>
-
-      <pre><code>layout (std140) uniform Matrices
-{
-    mat4 projection;
-    mat4 view;
-};
-</code></pre>
-
-      <p>Notes: code needs further cleanup as I left parts of the instancing project in the
-        original for use in debugging. This should get stripped out at some point.</p>
-
-      <h2 id="renderer242lightingmapspluscubeobject">Renderer242LightingMapsPlusCubeObject</h2>
-
-      <p>No tutorial for this. It is a variation on Renderer242LightingMapsSpecular
-        and adds in an OBJ based cube to test integration of OBJ rendering into the scene.</p>
-
-      <h2 id="renderer242lightingmapsspecular">Renderer242LightingMapsSpecular</h2>
-
-      <p>Tutorial URL: https://learnopengl.com/Lighting/Lighting-maps</p>
-
-      <p>Code link URL: https://learnopengl.com/code<em>viewer</em>gh.php?code=src/2.lighting/4.2.lighting<em>maps</em>specular<em>map/lighting</em>maps_specular.cpp
-      </p>
-
-      <p>Excellent tutorial on lighting combined with textures.</p>
-
-      <h2 id="renderer174camera">Renderer174Camera</h2>
-
-      <p>Tutorial URL: https://learnopengl.com/Getting-started/Camera</p>
-
-      <p>Code link URL: https://learnopengl.com/code<em>viewer</em>gh.php?code=src/1.getting<em>started/7.4.camera</em>class/camera_class.cpp
-      </p>
-
-      <h2 id="renderer163coordinatesystems">Renderer163CoordinateSystems</h2>
-
-      <p>Tutorial URL: https://learnopengl.com/Getting-started/Coordinate-Systems</p>
-
-      <p>Code link URL:
-        https://learnopengl.com/code<em>viewer</em>gh.php?code=src/1.getting<em>started/6.3.coordinate</em>systems<em>multiple/coordinate</em>systems_multiple.cpp
-      </p>
-
-      <h2 id="renderer121hellotriangle">Renderer121HelloTriangle</h2>
-
-      <p>Tutorial URL: https://learnopengl.com/Getting-started/Hello-Triangle</p>
-
-      <p>Code link URL: https://learnopengl.com/code<em>viewer</em>gh.php?code=src/1.getting<em>started/2.1.hello</em>triangle/hello_triangle.cpp
-      </p>
-
-      <p>The "hello world" basics in the learnopengl.com style. But adapted to Android and
-        OpenGL ES and Kotlin instead of a PC and a GPU and C++.</p>
-
-      <h2 id="googlesamplerenderer">GoogleSampleRenderer</h2>
-
-      <p>Android OpenGL Triangle and Square sample</p>
-
-      <p>Tutorial URL: https://developer.android.com/training/graphics/opengl</p>
-
-      <p>This is the basic "Hello Opengl" introduction - just the basics. It is included for
-        comparisons to code styling to the learnopengl methodology.</p>
-
-      <h1 id="projectnotes">Project notes</h1>
-
-      <h2 id="androidframework">Android Framework</h2>
-
-      <p>The Android application framework is one Activity and multiple Fragments - one for each major section
-        in the learnopengl "coursework". The framework also includes modern Android techniques - more
-        can be learned about these techniques in the excellent Udacity course:</p>
-
-      <p>https://classroom.udacity.com/courses/ud9012</p>
-
-      <ul>
-        <li>Databinding</li>
-
-        <li>ViewModel with LiveData controls</li>
-      </ul>
+      <p><b>
+        <a href="https://github.com/jimandreas/AndroidKotlinLearnOpenGL" target="_blank">
+          https://github.com/jimandreas/AndroidKotlinLearnOpenGL
+        </a></b>
 
       <h2 id="importedcontent">Imported content</h2>
 
@@ -222,7 +90,11 @@
 
       <p>See also the Github repo:</p>
 
-      <p>https://github.com/Rajawali/Rajawali</p>
+      <p><b>
+        <a href="https://github.com/Rajawali/Rajawali" target="_blank">
+          https://github.com/Rajawali/Rajawali
+        </a></b>
+
     </div>
   </div>
 

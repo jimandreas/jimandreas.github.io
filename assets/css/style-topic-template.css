@@ -226,7 +226,7 @@ img {
 }
 
 @media (max-width: 500px) {
-  .body {
+  body {
     margin: 10px 10px;
   }
   .navbar .container {
