@@ -3,66 +3,84 @@
 <head>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-  <title>Jim Andreas intro</title>
-  <link rel="stylesheet" media="screen" href="assets/css/style.css">
+
+  <title>Molecule of the Month</title>
+
+  <link rel="stylesheet" media="screen" href="../assets/css/style-page-template.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@jimandreasdev">
+  <meta name="twitter:creator" content="@jimandreasdev">
+
+  <meta property="og:description" content="Molecule of the Month">
+  <meta name="twitter:title" content="Molecule of the Month">
+  <meta name="twitter:description" content="Fan page for the awesome collection of Molecule of the Month explanations">
+  <meta name="twitter:image" content="https://jimandreas.github.io/assets/images/molbio-2019-10-20-motm-BIG.jpg">
+
 </head>
 <body>
 
+<!--Nav bar-->
 <nav class="navbar">
   <div class="container">
-    <h1 class="logo">An <strong class="seo">Android</strong> view on <strong class="seo">molecules</strong></h1>
-    <ul class="nav">
-      <li><a href="#about">About</a></li>
-    </ul>
+    <div class="logo-graphic">
+      <img src="../assets/images/home-panel1-bg-2048x512.jpg" alt="">
+    </div>
+
+    <h1 class="logo">Molecule of the Month</h1>
+
+    <div class="nav">
+      <a href="https://jimandreas.github.io">Home</a>
+    </div>
   </div>
 </nav>
 
-<!-- Header Showcase -->
-<header id="showcase">
-  <div class="bg-image"></div>
-</header>
+<!--Content template,
+    title
+    composition splits into two columns
+    Move left column on top for narrow screens.
+    -->
 
-<!-- work categories -->
+<div class="content-card">
+  <h2 id="subject1" class="content-subject">
+    Molecule of the Month
+  </h2>
+  <div class="content">
+    <div class="title">
 
-<div class="boxes">
-  <div class="box">
-    <a href="./content/topic-molbio.html">
-      <img src="./assets/images/opengl-2019-10-06-1200x628-Objects.jpg" alt="">
-      <div class="card-content">
-        <h3 class="card-title"><strong class="seo">Molecular Biology</strong></h3>
+      <div class="date-and-graphic">
         <p>
-          Description and links to <strong class="seo">Molecular Biology</strong> area.
+          October 20, 2019
         </p>
+        <img src="../assets/images/molbio-2019-10-20-motm-BIG.jpg" alt="">
       </div>
+    </div>
+    <div class="composition">
+      The Molecule of the Month series has been now assembled for almost 20 years.  I have been a fan
+      of the series for many years.  I must admit that the sheer volume of work and detail exposed could
+      keep me busy reading for all of my time - therefore I really cannot and must not comprehend all of it.
+      In short, the style of explaining and the inspiration that the content gives me drives me to
+      keep thinking about the deeper mysteries in and science of molecular biology, and to keep
+      driving to understand and develop ways that might help me to understand how things work in
+      this realm.
+
+    </div>
+  </div>
+  <div class="tweetme">
+    <a class="twitter-share-button" target="_blank"
+       href=
+ "https://twitter.com/intent/tweet?text=A+testimonial+honoring+the+Molecule+of+the+Month&url=https://jimandreas.github.io/content/molbio-2019-10-20-motm.html">
+
+      <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
+           class="svg-inline--fa fa-twitter fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 512 512">
+        <path fill="currentColor"
+              d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+      </svg>
     </a>
   </div>
-
-  <div class="box">
-    <a href="./content/topic-opengl.html">
-      <img src="./assets/images/opengl-2019-10-06-1200x628-Objects.jpg" alt="">
-      <div class="card-content">
-        <h3 class="card-title">OpenGL graphics</h3>
-        <p>
-          Description and links to <strong class="seo">OpenGL graphics</strong> area.
-        </p>
-      </div>
-    </a>
-  </div>
-
-  <div class="box">
-    <a href="./content/topic-template.html">
-      <img src="./assets/images/opengl-2019-10-06-1200x628-Objects.jpg" alt="">
-      <div class="card-content">
-        <h3 class="card-title"><strong class="seo">Android and Kotlin</strong></h3>
-        <p>
-          Description and links to Android and Kotlin area.
-        </p>
-      </div>
-    </a>
-  </div>
-
 </div>
+<!--END first subject-->
 
 
 <!-- Footer -->
@@ -71,13 +89,13 @@
     <div class="icons">
       <h3>Favorite places:</h3>
       <ul>
-        <li><a href="https://pdb101.rcsb.org/"><img src="assets/images/z3rdParty-logo-pdb101.png"></a>
+        <li><a href="https://pdb101.rcsb.org/"><img src="../assets/images/z3rdParty-logo-pdb101.png"></a>
         </li>
         <li><a href="https://www.rcsb.org/pages/about-us/index"><img
-          src="assets/images/z3rdParty-wwpdb.png"></a></li>
+          src="../assets/images/z3rdParty-wwpdb.png"></a></li>
       </ul>
     </div>
-    <div>
+    <div class="other-links">
       <h3 class="text-2 mb-1">Other places:</h3>
       <a href="https://twitter.com/jimandreasdev">
         <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter"
@@ -109,6 +127,5 @@
     </div>
   </div>
 </div>
-
 </body>
 </html>
