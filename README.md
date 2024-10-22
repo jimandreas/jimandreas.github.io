@@ -1,6 +1,8 @@
 # jimandreas.github.io
 Experimental web page(s) repo
 
+These are the sourcefiles for [JimAndreas.com](https:jimandreas.com)
+
 ### The web page architecture
 
 is based on this excellent approach:
