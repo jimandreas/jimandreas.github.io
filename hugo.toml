@@ -35,7 +35,7 @@ theme = "Hugo-Octopress"
 
 [[menu.main]]
   Name = "About"
-  URL = "/page/about/"
+  URL = "/about/"
   weight = 5
 
 # Sidebar menu
