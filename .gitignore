@@ -1,1 +1,47 @@
-/.idea
+    # Hugo build output
+/public/
+/resources/_gen/
+hugo_stats.json
+.hugo_build.lock
+
+# IDE and editors
+/.idea/
+/.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node (if using Hugo Pipes with npm)
+node_modules/
+package-lock.json
+npm-debug.log
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+
+# Temporary files
+*.log
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Hugo module cache (if using Hugo Modules)
+_vendor/
+
+# Local development
+.hugo_build.lock
