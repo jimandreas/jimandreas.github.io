@@ -1,0 +1,268 @@
+/* Global Styles */
+:root {
+  --light-color: #f4f4f4;
+   --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+
+}
+
+em.seo, strong.seo {
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.0;
+  color: #FFF;
+  background: #000;
+  font-size: 1.0rem;
+  -webkit-font-smoothing: antialiased;
+  margin: 30px 50px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.3;
+}
+
+a {
+  color: var(--light-color);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+/* for all container classes */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+/**************
+ * END global styles
+ **************/
+
+.navbar {
+  font-size: 1.2rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
+.navbar .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.logo-graphic {
+  padding: 10px;
+}
+
+.logo-graphic img {
+  width: 320px;
+  height: 80px;
+  opacity: 0.7;
+}
+
+.navbar .logo {
+  justify-self: flex-start;
+  font-size: 1.5rem;
+  font-color: var(--light-color);
+  padding: 20px 0px;
+}
+
+.navbar .nav {
+  justify-self: flex-end;
+  font-size: 1.0rem;
+  padding: 30px 0px;
+}
+
+.navbar a {
+  padding: 0 1rem;
+}
+
+.navbar a:hover {
+  color: #55F;
+}
+
+/**************************
+ * Content
+ **************************/
+.content-card {
+  background: var(--primary);
+  color: #000;
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 1rem;
+  box-shadow: 0px 0px 10px 5px rgba(112,112,112,1);
+}
+.content-card a {
+  color: #000;
+}
+.content-card a:hover {
+  color: #55F;
+}
+.content-subject {
+  padding-left: 3rem;
+}
+.content {
+  padding: 1rem;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(6, 1fr);
+}
+.composition {
+  grid-column: 2/7;
+}
+.date-and-graphic img {
+  width: 150px;
+  height: 79px;
+}
+
+
+/**************************
+ * Footer
+ **************************/
+
+.section-footer {
+  color: #fff;
+
+}
+.section-footer .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  padding: 5px 100px;
+}
+.section-footer h3 {
+  margin-bottom: 0.7rem;
+}
+.section-footer a > svg {
+  color: #508C2B;
+  margin-right: 0.5rem;
+  width: 40px;
+  height: 40px;
+}
+
+.icons {
+  margin-left: 100px;
+  width: 200px;
+}
+
+@media (max-width: 1000px) {
+  .navbar .container {
+    grid-gap: 1.2rem;
+  }
+  .navbar .logo {
+    font-size: 1.0rem;
+  }
+  .navbar .logo-graphic img {
+    width: 240px;
+    height: 60px;
+  }
+
+  .section-footer .container {
+    padding: 5px 75px;
+  }
+  .section-footer .icons {
+    margin-left: 75px;
+    width: 200px;
+  }
+}
+
+/* Responsive layout - when the screen is less than 800px wide,
+ * make the two columns stack on top of each other instead
+ * of next to each other
+ */
+@media (max-width: 700px) {
+  .navbar .container {
+    grid-gap: 0.9rem;
+  }
+  .navbar .logo {
+    font-size: 1.0rem;
+  }
+  .navbar .logo-graphic img {
+    width: 160px;
+    height: 40px;
+  }
+
+  .content-card .content {
+    grid-template-columns: 1fr;
+  }
+  .date-and-graphic img {
+    width: 150px;
+    height: 79px;
+  }
+  .composition {
+    grid-column: 1/2;
+  }
+
+  .section-footer .container {
+    padding: 5px 50px;
+  }
+  .section-footer .icons {
+    margin-left: 50px;
+    width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    margin: 10px 10px;
+  }
+  .navbar .container {
+    grid-template-columns: 1fr;
+    grid-gap: 0rem;
+    padding: 0 0px;
+  }
+  .navbar .logo-graphic img {
+      width: 100%;
+      height: 100%;
+
+  }
+  .navbar .logo {
+    padding: 0px 0px;
+  }
+  .navbar .nav {
+    padding: 0px 0px;
+  }
+
+
+  .content-subject {
+    padding-left: 0.25rem;
+  }
+
+
+
+  .section-footer .container {
+      grid-template-columns: 1fr;
+      grid-gap: 0rem;
+      padding: 0 10px;
+  }
+  .section-footer .icons {
+    margin-left: 10px;
+    width: 200px;
+  }
+  .section-footer .other-links {
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,85 @@
+baseURL = "https://jimandreas.github.io/"
+languageCode = "en-us"
+title = "Jim Andreas"
+theme = "Hugo-Octopress"
+
+# Pagination
+[pagination]
+  pagerSize = 10
+
+# Taxonomies
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+# Main navigation menu
+[[menu.main]]
+  Name = "Blog"
+  URL = "/"
+  weight = 1
+
+[[menu.main]]
+  Name = "OpenGL"
+  URL = "/opengl/"
+  weight = 2
+
+[[menu.main]]
+  Name = "Molecular Biology"
+  URL = "/molbio/"
+  weight = 3
+
+[[menu.main]]
+  Name = "Android/Kotlin"
+  URL = "/android-kotlin/"
+  weight = 4
+
+[[menu.main]]
+  Name = "About"
+  URL = "/page/about/"
+  weight = 5
+
+# Sidebar menu
+[[menu.sidebar]]
+  Name = "GitHub"
+  URL = "https://github.com/jimandreas"
+  weight = 1
+
+# Site parameters
+[params]
+  # Sidebar
+  sidebarHeader = "Jim Andreas"
+  sidebarText = "Software development, molecular biology, and graphics programming."
+
+  # Sidebar features
+  sidebarMenuEnabled = true
+  sidebarMenuHeader = "Links"
+  sidebarRecentLimit = 5
+  sidebarNewWindow = true
+
+  # Navigation
+  navigationNewWindow = true
+
+  # Social
+  github = "https://github.com/jimandreas"
+
+  # Taxonomy
+  generateTaxonomyList = true
+
+  # Twitter cards
+  twitterCardEnabled = true
+  twitterCardDomain = "jimandreas.github.io"
+
+  # 404 page
+  notFoundHeader = "Page Not Found"
+  notFoundText = "Sorry, the page you're looking for doesn't exist."
+
+# Markdown rendering
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    startLevel = 2
+  [markup.highlight]
+    style = "solarized-dark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
