@@ -57,7 +57,7 @@ theme = "Hugo-Octopress"
   sidebarNewWindow = true
 
   # Navigation
-  navigationNewWindow = true
+  navigationNewWindow = false
 
   # Social
   github = "https://github.com/jimandreas"
