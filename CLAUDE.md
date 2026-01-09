@@ -12,13 +12,16 @@ Hugo static site for jimandreas.github.io - a personal blog covering OpenGL/grap
 # Local development server
 hugo server
 
+# Include draft posts during development
+hugo server -D
+
 # Production build
 hugo --gc --minify
 ```
 
 ## Deployment
 
-Pushes to `main` branch automatically trigger GitHub Actions deployment via `.github/workflows/hugo.yml`. The workflow uses Hugo 0.153.5 extended.
+Pushes to `master` branch automatically trigger GitHub Actions deployment via `.github/workflows/hugo.yml`. The workflow uses Hugo 0.153.5 extended.
 
 ## Content Structure
 
@@ -27,11 +30,13 @@ Pushes to `main` branch automatically trigger GitHub Actions deployment via `.gi
 | OpenGL/Graphics | `content/opengl/` | `/opengl/` |
 | Molecular Biology | `content/molbio/` | `/molbio/` |
 | Android/Kotlin | `content/android-kotlin/` | `/android-kotlin/` |
-| Static pages | `content/page/` | `/page/` |
+| About | `content/about/` | `/about/` |
 
 ## Adding Blog Posts
 
-Create new `.md` files in the appropriate content folder with front matter:
+Create new `.md` files in the appropriate content folder. File naming convention: `YYYY-MM-DD-title.md`
+
+Front matter format:
 
 ```yaml
 ---
@@ -41,16 +46,17 @@ draft: false
 categories:
   - OpenGL
 tags:
-  - tag1
-twitterImage: "/images/image.jpg"
+  - android
+  - graphics
+twitterImage: "/images/image-1200x628.jpg"
 ---
 ```
 
-Images go in `static/images/` and are referenced as `/images/filename.jpg`.
+Images go in `static/images/` and are referenced as `/images/filename.jpg`. Twitter card images should be 1200x628 pixels.
 
 ## Theme
 
-Uses [Hugo-Octopress](https://github.com/parsiya/Hugo-Octopress) theme as a git submodule. After cloning, run:
+Uses [Hugo-Octopress](https://github.com/parsiya/Hugo-Octopress) theme as a git submodule. After cloning:
 
 ```bash
 git submodule update --init --recursive
@@ -58,8 +64,4 @@ git submodule update --init --recursive
 
 ## Configuration
 
-Main config in `hugo.toml`. Key settings:
-- Site URL: `https://jimandreas.github.io/`
-- Pagination: 10 posts per page
-- Syntax highlighting: solarized-dark
-- Twitter cards enabled
+Main config in `hugo.toml`. Markdown rendering allows unsafe HTML (`markup.goldmark.renderer.unsafe = true`) for embedded content.
