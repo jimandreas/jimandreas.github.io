@@ -29,7 +29,7 @@ theme = "Hugo-Octopress"
   weight = 3
 
 [[menu.main]]
-  Name = "Android/Kotlin"
+  Name = "Claude"
   URL = "/android-kotlin/"
   weight = 4
 

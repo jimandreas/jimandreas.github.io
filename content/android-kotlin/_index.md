@@ -1,6 +1,6 @@
 ---
-title: "Android and Kotlin"
-description: "Android development with Kotlin"
+title: "Claude"
+description: "Projects developed and enhanced with Claude Opus 4.5"
 ---
 
-Articles about Android development with Kotlin.
+A chronicle of software development projects created and improved with Claude Opus 4.5 assistance.
