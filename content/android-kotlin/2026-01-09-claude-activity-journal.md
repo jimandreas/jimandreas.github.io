@@ -60,6 +60,7 @@ Added more content and fixed usability issues across the site.
 ### materialistic
 
 **Path:** `C:/a/j/active/materialistic`
+
 **Description:** Material Design Hacker News client for Android
 
 - Added CLAUDE.md for Claude Code guidance
@@ -70,6 +71,7 @@ Added more content and fixed usability issues across the site.
 ### GamepadTest
 
 **Path:** `C:/a/j/active/GamepadTest`
+
 **Description:** Android app displaying Bluetooth gamepad state
 
 - Added CLAUDE.md for Claude Code guidance
@@ -104,6 +106,7 @@ Added more content and fixed usability issues across the site.
 ### MotmBrowser
 
 **Path:** `C:/a/j/active/MotmBrowser`
+
 **Description:** 3D molecular structure viewer for RCSB "Molecule of the Month"
 
 - Added CLAUDE.md for Claude Code guidance
@@ -127,6 +130,7 @@ Added more content and fixed usability issues across the site.
 ### musicplayer (NEW)
 
 **Path:** `C:/a/j/claudeOpus/musicplayer`
+
 **Description:** Android music player app using Jetpack Compose and MVVM
 
 Initial app creation by Claude Opus 4.5 from scratch!
