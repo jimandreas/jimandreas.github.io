@@ -45,3 +45,12 @@ _vendor/
 
 # Local development
 .hugo_build.lock
+
+# Claude Code
+.claude/
+
+# Documents
+*.docx
+
+# Windows artifacts
+nul
