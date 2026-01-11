@@ -29,7 +29,7 @@ Pushes to `master` branch automatically trigger GitHub Actions deployment via `.
 |---------|------|-----|
 | OpenGL/Graphics | `content/opengl/` | `/opengl/` |
 | Molecular Biology | `content/molbio/` | `/molbio/` |
-| Claude | `content/android-kotlin/` | `/android-kotlin/` |
+| Claude | `content/claude/` | `/claude/` |
 | About | `content/about/` | `/about/` |
 
 ## Adding Blog Posts

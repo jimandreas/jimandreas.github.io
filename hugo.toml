@@ -30,7 +30,7 @@ theme = "Hugo-Octopress"
 
 [[menu.main]]
   Name = "Claude"
-  URL = "/android-kotlin/"
+  URL = "/claude/"
   weight = 4
 
 [[menu.main]]
@@ -46,6 +46,9 @@ theme = "Hugo-Octopress"
 
 # Site parameters
 [params]
+  # Sections to show on homepage
+  mainSections = ["opengl", "molbio", "claude"]
+
   # Sidebar
   sidebarHeader = "Jim Andreas"
   sidebarText = "Software development, molecular biology, and graphics programming."

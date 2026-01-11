@@ -17,7 +17,7 @@ Place your new post in one of these folders based on the topic:
 |-------|--------|
 | OpenGL/Graphics | `content/opengl/` |
 | Molecular Biology | `content/molbio/` |
-| Android/Kotlin | `content/android-kotlin/` |
+| Claude | `content/claude/` |
 
 ### 2. Create the File
 
@@ -189,4 +189,62 @@ Vertex buffers improve performance by...
 
 - [LearnOpenGL - Vertex Buffers](https://learnopengl.com/)
 - [Android OpenGL ES Guide](https://developer.android.com/guide/topics/graphics/opengl)
+```
+
+## AI-REF Protocol for Human-AI Collaboration
+
+When drafting blog posts, you can leave markers for Claude Code to resolve later. This allows you to focus on writing while deferring reference lookups, citations, and other tasks to AI assistance.
+
+### Marker Format
+
+Use HTML comments with the `AI-REF:` prefix:
+
+```markdown
+<!-- AI-REF: [action] [details or URL] -->
+```
+
+### Supported Actions
+
+| Action | Description | Example |
+|--------|-------------|---------|
+| `Replace with citation` | Create a formatted citation | `<!-- AI-REF: Replace with citation + https://example.com/article -->` |
+| `Insert image` | Add an image at this location | `<!-- AI-REF: Insert image path/to/image.png -->` |
+| `Expand` | Elaborate on a topic | `<!-- AI-REF: Expand explanation of shaders -->` |
+| `Verify` | Fact-check a claim | `<!-- AI-REF: Verify this date -->` |
+
+### Inline Placeholders
+
+For inline citations, use `[AI-REF]` as a placeholder in your text:
+
+```markdown
+This concept was explained by [AI-REF].
+
+<!-- AI-REF: Replace with citation + https://example.com/source -->
+```
+
+### Why HTML Comments?
+
+- **Invisible in preview**: Won't appear in rendered output
+- **Won't break builds**: Hugo ignores HTML comments
+- **Searchable**: Easy to find with `grep AI-REF`
+- **Clear intent**: Separates markers from actual content
+
+### Workflow
+
+1. Write your draft, inserting `[AI-REF]` placeholders and `<!-- AI-REF: ... -->` comments
+2. Ask Claude Code to "fix up AI-REF markers" in your post
+3. Claude will fetch URLs, format citations, insert images, and remove the markers
+
+### Example
+
+**Before:**
+```markdown
+The paradigm shift is explained by [AI-REF].
+
+<!-- AI-REF: Replace with citation + https://rein.pk/replacing-middle-management-with-apis -->
+```
+
+**After:**
+```markdown
+The paradigm shift is explained by Peter Reinhardt in his 2015 essay "[Replacing Middle Management with APIs](https://rein.pk/replacing-middle-management-with-apis)".
 ```
