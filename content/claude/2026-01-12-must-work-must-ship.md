@@ -8,7 +8,7 @@ categories:
 tags:
   - product engineering
   - processes
-twitterImage: "/images/2026-01-12-must-work-must-ship.md"
+twitterImage: "/images/claude-2026-01-12-must-work-must-ship-Gemini_Generated_Image.png"
 ---
 
 It was an evolutionary process.  When you work running on the technology treadmill
