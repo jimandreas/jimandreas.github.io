@@ -68,9 +68,16 @@ theme = "Hugo-Octopress"
   # Taxonomy
   generateTaxonomyList = true
 
-  # Twitter cards
+  # This enables/disables the logic in many themes,
+  # though Hugo's internal template doesn't require a boolean to "turn on."
   twitterCardEnabled = true
-  twitterCardDomain = "jimandreas.github.io"
+
+  # The Twitter handle for the site/publisher
+  twitterCardSite = "jim__andreas"
+
+  # The Twitter handle for the specific author (can be overridden in front matter)
+  twitterCreator = "jim__andreas"
+  #  twitterCardDomain = "jimandreas.github.io"
 
   # 404 page
   notFoundHeader = "Page Not Found"
