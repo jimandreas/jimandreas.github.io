@@ -1,6 +1,6 @@
 ---
 title: "Claude Activity Journal 2026 Update 01"
-date: 2026-01-015
+date: 2026-01-15
 draft: false
 categories:
   - Claude
