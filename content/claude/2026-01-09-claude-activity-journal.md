@@ -9,31 +9,31 @@ tags:
   - kotlin
   - claude-opus
   - ai-assisted-development
-twitterImage: "/images/claude-journal-2026.jpg"
 ---
 
 A chronicle of projects developed and enhanced with Claude Opus 4.5 assistance throughout 2026.
 
 ## Project Summary
 
-| Date | Project | Key Work |
-|------|---------|----------|
-| Jan 1 | jimandreas.github.io | Website conversion to Hugo |
-| Jan 2 | jimandreas.github.io | Content & usability fixes |
-| Jan 3 | materialistic | Dependency upgrades, AGP 9.0 |
-| Jan 3 | GamepadTest | CLAUDE.md, deprecated APIs |
-| Jan 4 | GamepadTest | New icons, layout fixes |
-| Jan 5 | GamepadTest | Release signing, screenshots |
-| Jan 6 | MotmBrowser | Dependencies, FastscrollBubble fix |
-| Jan 7 | MotmBrowser | Android 15, accessibility, R8 fix |
-| Jan 7-8 | musicplayer | New app created from scratch! |
-| Jan 9 | musicplayer | Landscape mode, tablet layouts, play/pause fix |
+| Date    | Project              | Key Work                                       |
+|---------|----------------------|------------------------------------------------|
+| Jan 1   | jimandreas.github.io | Website conversion to Hugo                     |
+| Jan 2   | jimandreas.github.io | Content & usability fixes                      |
+| Jan 3   | materialistic        | Dependency upgrades, AGP 9.0                   |
+| Jan 3   | GamepadTest          | CLAUDE.md, deprecated APIs                     |
+| Jan 4   | GamepadTest          | New icons, layout fixes                        |
+| Jan 5   | GamepadTest          | Release signing, screenshots                   |
+| Jan 6   | MotmBrowser          | Dependencies, FastscrollBubble fix             |
+| Jan 7   | MotmBrowser          | Android 15, accessibility, R8 fix              |
+| Jan 7-8 | musicplayer          | New app created from scratch!                  |
+| Jan 9   | musicplayer          | Landscape mode, tablet layouts, play/pause fix |
 
 ---
 
 ## Highlight
 
-The **musicplayer** project stands out as a complete app created by Claude Opus 4.5 from initial commit to Play Store ready in approximately 2 days, including Chromecast support!
+The **musicplayer** project stands out as a complete app created by Claude Opus 4.5 from initial commit to Play Store
+ready in approximately 2 days, including Chromecast support!
 
 ---
 
@@ -170,6 +170,9 @@ A flurry of feature additions and polish:
 Landscape and tablet layout improvements:
 
 - **Added landscape mode** with side-by-side layout showing file list and player controls simultaneously
-- **Fixed play/pause state bug** - The ViewModel's playbackState was only synced inside the position update coroutine job. When pausing, the job cancellation left the state stale at PLAYING, preventing the UI from showing the play button
-- **Added tablet-specific landscape layout** - Uses smallest screen dimension to detect tablets (≥600dp) and displays portrait-style vertical layout on the right panel, while phones keep the compact horizontal layout
+- **Fixed play/pause state bug** - The ViewModel's playbackState was only synced inside the position update coroutine
+  job. When pausing, the job cancellation left the state stale at PLAYING, preventing the UI from showing the play
+  button
+- **Added tablet-specific landscape layout** - Uses smallest screen dimension to detect tablets (≥600dp) and displays
+  portrait-style vertical layout on the right panel, while phones keep the compact horizontal layout
 - Updated README with documentation for landscape mode, Chromecast, and album art features

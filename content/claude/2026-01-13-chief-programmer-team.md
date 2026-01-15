@@ -1,5 +1,5 @@
 ---
-title: "From Code Monkeys to AI Conductors: The New Symphony"
+title: "From Soloists to AI Conductors: The New Symphony"
 date: 2026-01-13
 draft: true
 categories:
@@ -23,7 +23,7 @@ Brooks as a way to reduce the communication overhead of a larger team while
 working productively on a complex project.  One key factor of this model is the 
 support staff that work on the details of the project for the Chief Programmer.
 
-<img src="/images/claude-2026-01-13-chief-programmer-team.png" align="left" width="300" style="margin-right: 15px;">
+<img src="/images/claude-2026-01-13-chief-programmer-team.png" align="left" width="300" style="margin-right: 15px;" alt="">
 
 The [Baker paper[^3]] discusses the notion of a development support library (DSL) to
 speed up production by leveraging previously written and tested "machine code" 
