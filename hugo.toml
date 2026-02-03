@@ -34,9 +34,14 @@ theme = "Hugo-Octopress"
   weight = 4
 
 [[menu.main]]
+  Name = "Websites"
+  URL = "/websites/"
+  weight = 5
+
+[[menu.main]]
   Name = "About"
   URL = "/about/"
-  weight = 5
+  weight = 6
 
 # Sidebar menu
 [[menu.sidebar]]
