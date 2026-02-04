@@ -1,0 +1,21 @@
+baseURL = "https://jimandreas.github.io/"
+languageCode = "en-us"
+title = "Jim Andreas"
+theme = "minimal"
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    startLevel = 2
+  [markup.highlight]
+    style = "dracula"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

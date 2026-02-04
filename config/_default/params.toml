@@ -1,0 +1,11 @@
+mainSections = ["docs"]
+description = "Software development, molecular biology, and graphics programming."
+author = "Jim Andreas"
+github = "https://github.com/jimandreas"
+twitterCardEnabled = true
+twitterCardSite = "jim__andreas"
+twitterCreator = "jim__andreas"
+
+# 404 page
+notFoundHeader = "Page Not Found"
+notFoundText = "Sorry, the page you're looking for doesn't exist."

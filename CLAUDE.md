@@ -25,12 +25,17 @@ Pushes to `master` branch automatically trigger GitHub Actions deployment via `.
 
 ## Content Structure
 
+All content is organized under `content/docs/`:
+
 | Section | Path | URL |
 |---------|------|-----|
-| OpenGL/Graphics | `content/opengl/` | `/opengl/` |
-| Molecular Biology | `content/molbio/` | `/molbio/` |
-| Claude | `content/claude/` | `/claude/` |
-| About | `content/about/` | `/about/` |
+| OpenGL/Graphics | `content/docs/opengl/` | `/docs/opengl/` |
+| Molecular Biology | `content/docs/molbio/` | `/docs/molbio/` |
+| Claude | `content/docs/claude/` | `/docs/claude/` |
+| Websites | `content/docs/websites/` | `/docs/websites/` |
+| About | `content/docs/about/` | `/docs/about/` |
+
+Old URLs (e.g., `/opengl/`, `/molbio/`) redirect via Hugo aliases.
 
 ## Adding Blog Posts
 
@@ -49,6 +54,8 @@ tags:
   - android
   - graphics
 twitterImage: "/images/image-1200x628.jpg"
+aliases:
+  - /oldpath/post-slug/
 ---
 ```
 
@@ -56,12 +63,16 @@ Images go in `static/images/` and are referenced as `/images/filename.jpg`. Twit
 
 ## Theme
 
-Uses [Hugo-Octopress](https://github.com/parsiya/Hugo-Octopress) theme as a git submodule. After cloning:
-
-```bash
-git submodule update --init --recursive
-```
+Uses custom minimal theme at `themes/minimal/` with:
+- CSS dark/light mode via `@media (prefers-color-scheme: dark)`
+- Responsive mobile navigation
+- Twitter Card and Open Graph meta tags
 
 ## Configuration
 
-Main config in `hugo.toml`. Markdown rendering allows unsafe HTML (`markup.goldmark.renderer.unsafe = true`) for embedded content.
+Split configuration in `config/_default/`:
+- `hugo.toml` - Core Hugo settings
+- `menus.toml` - Navigation menu
+- `params.toml` - Site parameters
+
+Markdown rendering allows unsafe HTML (`markup.goldmark.renderer.unsafe = true`) for embedded content.

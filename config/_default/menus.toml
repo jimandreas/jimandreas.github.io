@@ -1,0 +1,29 @@
+[[main]]
+  name = "Blog"
+  url = "/"
+  weight = 1
+
+[[main]]
+  name = "OpenGL"
+  url = "/docs/opengl/"
+  weight = 2
+
+[[main]]
+  name = "Molecular Biology"
+  url = "/docs/molbio/"
+  weight = 3
+
+[[main]]
+  name = "Claude"
+  url = "/docs/claude/"
+  weight = 4
+
+[[main]]
+  name = "Websites"
+  url = "/docs/websites/"
+  weight = 5
+
+[[main]]
+  name = "About"
+  url = "/docs/about/"
+  weight = 6
