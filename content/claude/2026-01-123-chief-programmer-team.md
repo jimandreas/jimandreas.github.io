@@ -1,7 +1,7 @@
 ---
 title: "From Soloists to AI Conductors: The New Symphony"
-date: 2026-01-13
-draft: true
+date: 2026-01-23
+draft: false
 categories:
   - Blog
   - Claude
@@ -18,7 +18,7 @@ corporate life a new system is introduced that will
 "fix all the bugs in the previous system" only
 to reveal a new set of problems that users have to live with.   And the old rule of
 "Adding more programmers to a team makes a late project later" was also a true-ism.
-The Chief Programmer Team model, originally from IBM[^2][^3], was also discussed by
+The Chief Programmer Team model, originally from IBM[^2], was also discussed by
 Brooks as a way to reduce the communication overhead of a larger team while 
 working productively on a complex project.  One key factor of this model is the 
 support staff that work on the details of the project for the Chief Programmer.
@@ -31,7 +31,11 @@ that could be reused by the Chief Programmer.  It also introduced the role of a
 "Programming Secretary" that helped, among other things, maintain the 
 DSL.
 
-NEXT: Breakdown of human vs AI agents - for front end / backend, testing, security, documentation
+Fast forward to 1981.  The UN*X movement was in motion, and I eagerly explored the
+UN*X kernel and drivers through courses at Oregon State University.  I even had a
+UN*X "[Live Free Or Die](https://unix.org/license-plate.html)" coffee cup.  And 
+if you are a UN*X Geek, then you get started with the "[Command Line Interface](https://en.wikipedia.org/wiki/Command-line_interface)".
+
 
 [^1]: Brooks, F. P. (1975). *The Mythical Man-Month: Essays on Software Engineering*. Addison-Wesley.
 
