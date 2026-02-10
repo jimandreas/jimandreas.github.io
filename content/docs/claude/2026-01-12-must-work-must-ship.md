@@ -1,24 +1,32 @@
 ---
-title: "Must Work, Must Ship"
+title: "Must Work, Must Ship, No Magic, No Mind Reading"
 date: 2026-01-12
+draft: false
+
 description: "Reflections on the importance of reliability and delivery in software engineering."
 slug: "must-work-must-ship"
 author: "Jim Andreas"
 
-# Taxonomies
-categories: ["Software Engineering"]
-tags: ["Reliability", "Delivery", "Development Philosophy"]
-
+categories:
+  - Blog
+  - Claude
+tags:
+  - product engineering
+  - processes
+  
 # Image for OpenGraph and Twitter Cards
 images:
-- "https://www.jimandreas.com/images/2026-01-12-must-work-must-ship.png"
+  - "https://www.jimandreas.com/assets/images/2026-01-12-must-work-must-ship.png"
 
 # Custom Parameters for Social Media
 params:
-twitter_card: "summary_large_image"
-twitter_site: "@jim__andreas"
-twitter_creator: "@jim__andreas"
-og_type: "article"
+  twitter_card: "summary_large_image"
+  twitter_site: "@jim__andreas"
+  twitter_creator: "@jim__andreas"
+  og_type: "article"
+  
+aliases:
+  - /claude/2026-01-12-must-work-must-ship/
 
 # Accessibility
 image_alt: "Graphic representing software reliability and the shipping process"
