@@ -1,16 +1,27 @@
 ---
-title: "Must Work, Must Ship, No Magic, No Mind Reading"
-date: 2026-01-12
-draft: false
-categories:
-  - Blog
-  - Claude
-tags:
-  - product engineering
-  - processes
-twitterImage: "/images/claude-2026-01-12-must-work.png"
-aliases:
-  - /claude/2026-01-12-must-work-must-ship/
+title: "Must Work, Must Ship"
+date: 2026-01-12T09:00:00-07:00
+description: "Reflections on the importance of reliability and delivery in software engineering."
+slug: "must-work-must-ship"
+author: "Jim Andreas"
+
+# Taxonomies
+categories: ["Software Engineering"]
+tags: ["Reliability", "Delivery", "Development Philosophy"]
+
+# Image for OpenGraph and Twitter Cards
+images:
+- "https://www.jimandreas.com/images/2026-01-12-must-work-must-ship.png"
+
+# Custom Parameters for Social Media
+params:
+twitter_card: "summary_large_image"
+twitter_site: "@jim__andreas"
+twitter_creator: "@jim__andreas"
+og_type: "article"
+
+# Accessibility
+image_alt: "Graphic representing software reliability and the shipping process"
 ---
 
 It was an evolutionary process.  When you work running on the technology treadmill
