@@ -1,6 +1,6 @@
 ---
 title: "Must Work, Must Ship"
-date: 2026-01-12T09:00:00-07:00
+date: 2026-01-12
 description: "Reflections on the importance of reliability and delivery in software engineering."
 slug: "must-work-must-ship"
 author: "Jim Andreas"
