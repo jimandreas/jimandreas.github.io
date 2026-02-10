@@ -16,7 +16,7 @@ tags:
   
 # Image for OpenGraph and Twitter Cards
 images:
-  - "https://www.jimandreas.com/assets/images/2026-01-12-must-work-must-ship.png"
+  - "https://www.jimandreas.com/images/2026-01-12-must-work-must-ship.png"
 
 # Custom Parameters for Social Media
 params:
