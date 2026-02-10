@@ -20,6 +20,7 @@
     {{ range $pages.ByDate.Reverse }}
     <li class="post-item">
       <a href="{{ .RelPermalink }}">
+        {{ with .Params.thumbnail }} <img src="{{ . | relURL }}" alt="{{ $.Title }}"> {{ end }}
         <span class="post-title">{{ .Title }}</span>
         <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
       </a>

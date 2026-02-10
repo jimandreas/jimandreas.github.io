@@ -2,6 +2,11 @@
 title: "From Soloists to AI Conductors: The New Symphony"
 date: 2026-01-23
 draft: false
+
+description: "The new paradigm is software orchestration, not soloists"
+slug: "The programmer as a band leader"
+author: "Jim Andreas"
+
 categories:
   - Blog
   - Claude
@@ -9,9 +14,25 @@ tags:
   - programming
   - chief programmer team
   - paradigm shift
-twitterImage: "/images/claude-2026-01-13-cpt-orchestra.png"
+
+# Image for OpenGraph and Twitter Cards
+images:
+  - "https://www.jimandreas.com/images/claude-2026-01-13-cpt-orchestra.png"
+
+# Custom Parameters for Social Media
+params:
+  twitter_card: "summary_large_image"
+  twitter_site: "@jim__andreas"
+  twitter_creator: "@jim__andreas"
+  og_type: "article"
+  
+thumbnail: "images/claude-2026-01-13-cpt-orchestra-thumb.png"
+
 aliases:
   - /claude/2026-01-123-chief-programmer-team/
+
+# Accessibility
+image_alt: "Graphic representing software as an orchestra"
 ---
 
 Fred Brooks' "The Mythical Man Month[^1]" was one of my favorite books from way
