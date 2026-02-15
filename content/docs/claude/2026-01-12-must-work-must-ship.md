@@ -13,10 +13,6 @@ categories:
 tags:
   - product engineering
   - processes
-  
-# Image for OpenGraph and Twitter Cards
-images:
-  - "https://www.jimandreas.com/images/2026-01-12-must-work-must-ship.png"
 
 # Custom Parameters for Social Media
 params:
@@ -28,7 +24,7 @@ params:
 aliases:
   - /claude/2026-01-12-must-work-must-ship/
 
-thumbnail: "images/claude-2026-01-12-must-work-thumb.png"
+thumbnail: "/images/claude-2026-01-12-must-work-thumb.png"
 
 # Accessibility
 image_alt: "Graphic representing software reliability and the shipping process"

@@ -15,10 +15,6 @@ tags:
   - chief programmer team
   - paradigm shift
 
-# Image for OpenGraph and Twitter Cards
-images:
-  - "https://www.jimandreas.com/images/claude-2026-01-13-cpt-orchestra.png"
-
 # Custom Parameters for Social Media
 params:
   twitter_card: "summary_large_image"
@@ -26,7 +22,7 @@ params:
   twitter_creator: "@jim__andreas"
   og_type: "article"
   
-thumbnail: "images/claude-2026-01-13-cpt-orchestra-thumb.png"
+thumbnail: "/images/claude-2026-01-13-cpt-orchestra-thumb.png"
 
 aliases:
   - /claude/2026-01-123-chief-programmer-team/
