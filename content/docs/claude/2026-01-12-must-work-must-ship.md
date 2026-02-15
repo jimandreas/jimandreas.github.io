@@ -21,6 +21,8 @@ params:
   twitter_creator: "@jim__andreas"
   og_type: "article"
   
+twitterImage: "/images/claude-2026-01-12-must-work.png"
+
 aliases:
   - /claude/2026-01-12-must-work-must-ship/
 

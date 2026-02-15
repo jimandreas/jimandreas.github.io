@@ -9,6 +9,8 @@ tags:
   - kotlin
   - claude-opus
   - ai-assisted-development
+twitterImage: "/images/claude-2026-01-09-activity-journal.png"
+thumbnail: "/images/claude-2026-01-09-activity-journal-thumb.png"
 aliases:
   - /claude/2026-01-15-claude-update01/
 ---

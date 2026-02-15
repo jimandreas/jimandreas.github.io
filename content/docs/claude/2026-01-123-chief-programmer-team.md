@@ -22,6 +22,8 @@ params:
   twitter_creator: "@jim__andreas"
   og_type: "article"
   
+twitterImage: "/images/claude-2026-01-13-cpt-orchestra.png"
+
 thumbnail: "/images/claude-2026-01-13-cpt-orchestra-thumb.png"
 
 aliases:
