@@ -9,7 +9,7 @@ tags:
   - claude-opus
   - ai-assisted-development
 twitterImage: "/images/NearlyNormalsBurrito.jpg"
-thumbnail: "/images/NearlyNormalsBurrito.jpg"
+thumbnail: "/images/NearlyNormalsBurrito-thumbnail.jpg"
 aliases:
   - /claude/2026-02-17-nearly-nasty-burrito/
 ---
