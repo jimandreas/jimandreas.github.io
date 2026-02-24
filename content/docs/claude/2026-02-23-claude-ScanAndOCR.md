@@ -36,7 +36,6 @@ Key features:
 - PDF/A-1b compliant output with invisible per-word text overlay for accurate search highlighting
 - Multi-page batch scanning with "Scan More Pages / Done" prompt between pages
 - Quality slider mapping to JPEG compression (0.30–0.95 range)
-- PDF metadata fields: Author, Title, Keywords
 - Cancel button with temp-file cleanup
 - MSI installer bundling JRE 17, all dependencies, and tessdata — no separate Java install needed
 
