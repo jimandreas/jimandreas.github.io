@@ -1,8 +1,6 @@
 ---
 title: "Molecular Biology"
-description: "Articles about molecular biology and biochemistry"
+description: "Articles about molecular biology, biochemistry, and the history of medicine."
 aliases:
   - /molbio/
 ---
-
-Articles about molecular biology, biochemistry, and the history of medicine.

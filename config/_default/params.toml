@@ -1,5 +1,5 @@
 mainSections = ["docs"]
-description = "Software development, molecular biology, and graphics programming."
+description = "Software development, molecular biology, graphics programming, and messing about with Claude Code."
 author = "Jim Andreas"
 github = "https://github.com/jimandreas"
 twitterCardEnabled = true
