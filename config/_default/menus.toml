@@ -26,4 +26,4 @@
 [[main]]
   name = "About"
   url = "/docs/about/"
-  weight = 6
+  weight = 7
