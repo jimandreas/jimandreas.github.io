@@ -24,11 +24,6 @@
   weight = 5
 
 [[main]]
-  name = "Bioinformatics"
-  url = "/docs/bioinformatics/"
-  weight = 6
-
-[[main]]
   name = "About"
   url = "/docs/about/"
   weight = 7
