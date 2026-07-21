@@ -15,9 +15,10 @@ Place your new post in one of these folders based on the topic:
 
 | Topic | Folder |
 |-------|--------|
-| OpenGL/Graphics | `content/opengl/` |
-| Molecular Biology | `content/molbio/` |
-| Claude | `content/claude/` |
+| OpenGL/Graphics | `content/docs/opengl/` |
+| Molecular Biology | `content/docs/molbio/` |
+| Claude | `content/docs/claude/` |
+| Websites | `content/docs/websites/` |
 
 ### 2. Create the File
 
@@ -56,7 +57,6 @@ twitterImage: "/images/your-image.jpg"
 | `categories` | No | Main category (OpenGL, Molecular Biology, etc.) |
 | `tags` | No | List of tags for the post |
 | `twitterImage` | No | Image for Twitter/social cards |
-| `toc` | No | Set to `true` to show table of contents |
 
 ### 4. Write Your Content
 

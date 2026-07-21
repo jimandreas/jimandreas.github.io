@@ -21,7 +21,9 @@ hugo --gc --minify
 
 ## Deployment
 
-Pushes to `master` branch automatically trigger GitHub Actions deployment via `.github/workflows/hugo.yml`. The workflow uses Hugo 0.153.5 extended.
+Pushes to `master` branch automatically trigger GitHub Actions deployment via `.github/workflows/hugo.yml`. The workflow uses Hugo 0.153.5 extended. The `CNAME` file at the repo root points the published site at www.jimandreas.com.
+
+`public/` is Hugo build output (gitignored) — never edit it directly. `archive/` holds the old pre-Hugo static site, kept for history; it is not part of the Hugo build.
 
 ## Content Structure
 
@@ -60,6 +62,16 @@ aliases:
 ```
 
 Images go in `static/images/` and are referenced as `/images/filename.jpg`. Twitter card images should be 1200x628 pixels — omitting `twitterImage` falls back to a plain `summary` card instead of `summary_large_image`.
+
+`README.newBlogEntry.md` is the user's step-by-step guide for new posts. Note the theme does not implement a `toc` front-matter field — table-of-contents settings in `hugo.toml` are currently unused by the layouts.
+
+## AI-REF Markers
+
+Draft posts may contain `AI-REF` markers — a protocol (documented fully in `README.newBlogEntry.md`) for the user to defer work to Claude Code while drafting:
+
+- HTML comments carry the instruction: `<!-- AI-REF: Replace with citation + <url> -->`, `Insert image <path>`, `Expand <topic>`, `Verify <claim>`
+- An inline `[AI-REF]` placeholder in the prose marks where a resolved citation belongs
+- When asked to "fix up AI-REF markers": resolve each marker (fetch the URL, format the citation, insert the image, etc.), then remove the marker comments. Find them with `grep -r "AI-REF" content/`
 
 ## Theme
 
