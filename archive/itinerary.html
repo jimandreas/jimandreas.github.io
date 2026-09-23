@@ -1,0 +1,1125 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Japan Trip Itinerary</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f7f4ee;
+    --surface: #ffffff;
+    --surface-raised: #fdfcf9;
+    --ink: #262320;
+    --ink-soft: #55504a;
+    --muted: #8c867d;
+    --line: #e2ddd2;
+    --accent: #223a5e;
+    --accent-soft: #dde4ee;
+    --accent-line: #223a5e33;
+    --booked: #3f6b4f;
+    --booked-soft: #e2ede4;
+    --warn: #8c3b2e;
+    --warn-soft: #f2e4e0;
+    --shadow: 0 1px 2px rgba(38,35,32,0.04), 0 6px 20px -8px rgba(38,35,32,0.10);
+
+    /* type scale - desktop */
+    --fs-label: 11px;
+    --fs-chip: 10.5px;
+    --fs-meta: 13px;
+    --fs-body: 14px;
+    --fs-slot: 13.5px;
+    --fs-name: 16px;
+    --fs-tour: 14px;
+    --fs-daydate: 15px;
+    --fs-place: 24px;
+    --fs-stat: 20px;
+    --fs-range: 13px;
+    --fs-h1: clamp(32px, 6vw, 44px);
+
+    /* rhythm */
+    --pad-body: 56px 20px 100px;
+    --pad-card: 18px 20px;
+    --rail: 28px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17181a;
+      --surface: #201f1d;
+      --surface-raised: #242220;
+      --ink: #ece7de;
+      --ink-soft: #c7c0b5;
+      --muted: #8f897f;
+      --line: #37342f;
+      --accent: #8ea9d1;
+      --accent-soft: #24344a;
+      --accent-line: #8ea9d155;
+      --booked: #8fc09e;
+      --booked-soft: #223327;
+      --warn: #e0968a;
+      --warn-soft: #3a2622;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -8px rgba(0,0,0,0.45);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17181a;
+    --surface: #201f1d;
+    --surface-raised: #242220;
+    --ink: #ece7de;
+    --ink-soft: #c7c0b5;
+    --muted: #8f897f;
+    --line: #37342f;
+    --accent: #8ea9d1;
+    --accent-soft: #24344a;
+    --accent-line: #8ea9d155;
+    --booked: #8fc09e;
+    --booked-soft: #223327;
+    --warn: #e0968a;
+    --warn-soft: #3a2622;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -8px rgba(0,0,0,0.45);
+  }
+
+  /* phone - tuned for the Xperia 1's 411px-wide, 21:9 screen */
+  @media (max-width: 700px) {
+    :root {
+      --fs-label: 15px;
+      --fs-chip: 15px;
+      --fs-meta: 20px;
+      --fs-body: 22px;
+      --fs-slot: 22px;
+      --fs-name: 25px;
+      --fs-tour: 23px;
+      --fs-daydate: 26px;
+      --fs-place: 36px;
+      --fs-stat: 32px;
+      --fs-range: 19px;
+      --fs-h1: 44px;
+
+      --pad-body: 28px 14px 72px;
+      --pad-card: 18px 16px;
+      --rail: 16px;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+    padding: var(--pad-body);
+  }
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  header.masthead {
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-label);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    font-size: var(--fs-h1);
+    line-height: 1.15;
+    margin: 0 0 12px;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .dates-line {
+    font-size: var(--fs-body);
+    color: var(--ink-soft);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .dates-line .n {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .dates-line .sep { color: var(--muted); }
+
+  .trip-summary {
+    margin-top: 24px;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 18px 24px;
+  }
+  .stat .k {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .stat .v {
+    font-size: var(--fs-stat);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--ink);
+  }
+
+  /* flights */
+  .flights {
+    margin-top: 28px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    padding: var(--pad-card);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px 24px;
+  }
+  .flights h2 {
+    grid-column: 1 / -1;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-label);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    margin: 0;
+  }
+  .leg .leg-date {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    font-size: var(--fs-name);
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .leg p {
+    margin: 0 0 4px;
+    font-size: var(--fs-meta);
+    line-height: 1.5;
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+  }
+  .leg p:last-child { margin-bottom: 0; }
+
+  /* summary table */
+  .summary-table-wrap {
+    margin: 28px 0 48px;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+  }
+  table.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--fs-meta);
+    min-width: 520px;
+  }
+  .summary-table th {
+    text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-label);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  .summary-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .summary-table tbody tr:last-child td { border-bottom: none; }
+  .summary-table td.place-cell {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    color: var(--ink);
+    white-space: normal;
+  }
+  .summary-table tfoot td {
+    border-bottom: none;
+    border-top: 1px solid var(--line);
+    font-weight: 700;
+    color: var(--ink);
+    background: var(--surface-raised);
+  }
+
+  /* summary table, stacked for phones - no sideways scrolling */
+  @media (max-width: 700px) {
+    table.summary-table { min-width: 0; }
+    .summary-table thead { display: none; }
+    .summary-table,
+    .summary-table tbody,
+    .summary-table tfoot,
+    .summary-table tr,
+    .summary-table td { display: block; width: 100%; }
+    .summary-table tbody tr {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+    .summary-table tbody tr:last-child { border-bottom: none; }
+    .summary-table td {
+      padding: 3px 0;
+      border-bottom: none;
+      white-space: normal;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 14px;
+    }
+    .summary-table td::before {
+      content: attr(data-label);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: var(--fs-label);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      flex: none;
+    }
+    .summary-table td.place-cell {
+      display: block;
+      font-size: var(--fs-name);
+      margin-bottom: 6px;
+    }
+    .summary-table td.place-cell::before { content: none; }
+    .summary-table td.lodging-cell { text-align: right; }
+    .summary-table tfoot td {
+      padding: 14px 16px;
+      justify-content: space-between;
+    }
+    .summary-table tfoot td.total-spacer { display: none; }
+  }
+
+  /* timeline */
+  .timeline {
+    position: relative;
+    padding-left: var(--rail);
+    border-left: 2px solid var(--line);
+  }
+
+  .stop {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  .stop::before {
+    content: "";
+    position: absolute;
+    left: calc((var(--rail) + 9px) * -1);
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 4px var(--bg);
+  }
+
+  .stop-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 12px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .place {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    font-size: var(--fs-place);
+    color: var(--ink);
+  }
+  .stay-range {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-range);
+    color: var(--ink-soft);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    padding: var(--pad-card);
+  }
+
+  .lodging-name {
+    font-weight: 700;
+    font-size: var(--fs-name);
+    margin-bottom: 4px;
+  }
+  .lodging-desc {
+    color: var(--ink-soft);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .badge-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-chip);
+    letter-spacing: 0.03em;
+    padding: 4px 11px;
+    border-radius: 999px;
+    background: var(--booked-soft);
+    color: var(--booked);
+    font-weight: 500;
+  }
+  .badge.nights {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px 20px;
+    font-size: var(--fs-meta);
+    border-top: 1px dashed var(--line);
+    padding-top: 14px;
+    margin-top: 4px;
+  }
+  .meta-grid .k {
+    color: var(--muted);
+    font-size: var(--fs-label);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 3px;
+  }
+  .meta-grid .v {
+    color: var(--ink);
+    line-height: 1.5;
+    font-variant-numeric: tabular-nums;
+  }
+  @media (max-width: 700px) {
+    .meta-grid { grid-template-columns: 1fr; }
+  }
+
+  .note {
+    margin-top: 14px;
+    font-size: var(--fs-meta);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    background: var(--surface-raised);
+    border-left: 3px solid var(--accent-line);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* day-by-day */
+  .days {
+    margin-top: 18px;
+    border-top: 1px dashed var(--line);
+    padding-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .days-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-label);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: -6px;
+  }
+  .day-head {
+    display: flex;
+    align-items: baseline;
+    gap: 8px 10px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .day-date {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    font-size: var(--fs-daydate);
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-chip);
+    letter-spacing: 0.03em;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--surface-raised);
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .chip.travel {
+    background: var(--accent-soft);
+    border-color: transparent;
+    color: var(--accent);
+  }
+  .chip.mark {
+    background: var(--booked-soft);
+    border-color: transparent;
+    color: var(--booked);
+  }
+  .slots {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 9px 14px;
+    align-items: baseline;
+  }
+  .slots > div { display: contents; }
+  .slots dt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 2px;
+  }
+  .slots dd {
+    margin: 0;
+    font-size: var(--fs-slot);
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  /* on a phone the labels sit above their line instead of beside it */
+  @media (max-width: 700px) {
+    .slots { display: block; }
+    .slots > div {
+      display: block;
+      margin-bottom: 14px;
+    }
+    .slots > div:last-child { margin-bottom: 0; }
+    .slots dt { padding-top: 0; margin-bottom: 2px; }
+  }
+
+  .tour {
+    margin-top: 14px;
+    background: var(--surface-raised);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+  }
+  .tour-head {
+    display: flex;
+    align-items: baseline;
+    gap: 8px 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .tour-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-chip);
+    letter-spacing: 0.03em;
+    padding: 4px 11px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .tour-name {
+    font-weight: 700;
+    font-size: var(--fs-tour);
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .tour-desc {
+    font-size: var(--fs-meta);
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+  .tour .meta-grid {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .flag {
+    margin-top: 12px;
+    font-size: var(--fs-meta);
+    line-height: 1.55;
+    color: var(--warn);
+    background: var(--warn-soft);
+    border-radius: 6px;
+    padding: 9px 12px;
+  }
+  .flag strong { font-weight: 700; }
+
+  a {
+    color: var(--accent);
+    overflow-wrap: anywhere;
+  }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .tours-callout {
+    margin-top: 48px;
+    padding: 22px 24px;
+    border: 1px dashed var(--accent-line);
+    border-radius: 10px;
+    background: var(--accent-soft);
+  }
+  .tours-callout h2 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: var(--fs-name);
+    margin: 0 0 8px;
+    color: var(--accent);
+  }
+  .tours-callout p {
+    font-size: var(--fs-body);
+    color: var(--ink-soft);
+    margin: 0 0 10px;
+    line-height: 1.65;
+  }
+  .tours-callout p:last-child { margin-bottom: 0; }
+  footer {
+    margin-top: 40px;
+    font-size: var(--fs-meta);
+    color: var(--muted);
+    text-align: center;
+  }
+</style>
+
+<div class="page">
+  <header class="masthead">
+    <div class="eyebrow">Andreas Family &#8212; Version 3</div>
+    <h1>Japan, Lodging &amp; Route</h1>
+    <div class="dates-line">
+      <span class="n">Wed Sep 30</span><span class="sep">&#8594;</span><span class="n">Thu Oct 15</span>
+      <span class="sep">&#183;</span><span>15 nights, 7 stays</span>
+    </div>
+    <div class="trip-summary">
+      <div class="stat"><div class="k">Stays</div><div class="v">7</div></div>
+      <div class="stat"><div class="k">Nights</div><div class="v">15</div></div>
+      <div class="stat"><div class="k">Lodging</div><div class="v" style="color:var(--booked)">All booked</div></div>
+      <div class="stat"><div class="k">Reserved activities</div><div class="v">3</div></div>
+    </div>
+  </header>
+
+  <section class="flights">
+    <h2>Flights</h2>
+    <div class="leg">
+      <div class="leg-date">Tue Sep 29 &#8212; outbound</div>
+      <p>Melissa departs PDX 10:40 am</p>
+      <p>Dad departs Frankfurt 12:10 pm</p>
+    </div>
+    <div class="leg">
+      <div class="leg-date">Wed Sep 30 &#8212; arrivals</div>
+      <p>Dad arrives HND 8:10 am</p>
+      <p>Melissa arrives NRT 3:30 pm</p>
+    </div>
+    <div class="leg">
+      <div class="leg-date">Thu Oct 15 &#8212; homeward</div>
+      <p>Dad departs HND 9:40 am</p>
+      <p>Melissa departs NRT 6:15 pm</p>
+    </div>
+  </section>
+
+  <div class="summary-table-wrap">
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>City</th>
+          <th>Check-in</th>
+          <th>Check-out</th>
+          <th>Nights</th>
+          <th>Lodging</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="place-cell">Kamakura</td>
+          <td data-label="Check-in">Wed Sep 30</td>
+          <td data-label="Check-out">Sat Oct 3</td>
+          <td data-label="Nights">3</td>
+          <td class="lodging-cell" data-label="Lodging">Kaihinsou Kamakura</td>
+        </tr>
+        <tr>
+          <td class="place-cell">Kyoto</td>
+          <td data-label="Check-in">Sat Oct 3</td>
+          <td data-label="Check-out">Wed Oct 7</td>
+          <td data-label="Nights">4</td>
+          <td class="lodging-cell" data-label="Lodging">KOKO HOTEL Kyoto Sanjo</td>
+        </tr>
+        <tr>
+          <td class="place-cell">Nara</td>
+          <td data-label="Check-in">Wed Oct 7</td>
+          <td data-label="Check-out">Thu Oct 8</td>
+          <td data-label="Nights">1</td>
+          <td class="lodging-cell" data-label="Lodging">SETRE Naramachi</td>
+        </tr>
+        <tr>
+          <td class="place-cell">Osaka</td>
+          <td data-label="Check-in">Thu Oct 8</td>
+          <td data-label="Check-out">Sun Oct 11</td>
+          <td data-label="Nights">3</td>
+          <td class="lodging-cell" data-label="Lodging">HOTEL AMANEK Osaka Namba</td>
+        </tr>
+        <tr>
+          <td class="place-cell">Kanazawa</td>
+          <td data-label="Check-in">Sun Oct 11</td>
+          <td data-label="Check-out">Tue Oct 13</td>
+          <td data-label="Nights">2</td>
+          <td class="lodging-cell" data-label="Lodging">the square hotel KANAZAWA</td>
+        </tr>
+        <tr>
+          <td class="place-cell">Bessho-Onsen</td>
+          <td data-label="Check-in">Tue Oct 13</td>
+          <td data-label="Check-out">Wed Oct 14</td>
+          <td data-label="Nights">1</td>
+          <td class="lodging-cell" data-label="Lodging">Ryokan Hanaya</td>
+        </tr>
+        <tr>
+          <td class="place-cell">Tokyo &#8212; Haneda</td>
+          <td data-label="Check-in">Wed Oct 14</td>
+          <td data-label="Check-out">Thu Oct 15</td>
+          <td data-label="Nights">1</td>
+          <td class="lodging-cell" data-label="Lodging">Hotel Villa Fontaine Grand Haneda Airport</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" data-label="Total">Total</td>
+          <td data-label="Nights">15</td>
+          <td class="total-spacer"></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <div class="timeline">
+
+    <div class="stop">
+      <div class="stop-head">
+        <div class="place">Kamakura</div>
+        <div class="stay-range">Wed Sep 30 &#8594; Sat Oct 3</div>
+      </div>
+      <div class="card">
+        <div class="badge-row">
+          <span class="badge">Booked</span>
+          <span class="badge nights">3 nights</span>
+        </div>
+        <div class="lodging-name">Kaihinsou Kamakura</div>
+        <div class="lodging-desc">Western&#8211;ryokan fusion hotel near the beach and Enoden station; walking distance to the Daibutsu and Hasedera. Comes with a tatami sitting room / lounge area. On-site soaking pools. <a href="https://kaihinso.jp/english/">kaihinso.jp</a></div>
+        <div class="meta-grid">
+          <div><div class="k">Rate</div><div class="v">$914 / 3 nights ($305/night), breakfast incl.</div></div>
+          <div><div class="k">Cancellation</div><div class="v">Free until 9/15</div></div>
+        </div>
+
+        <div class="days">
+          <div class="days-label">Day by day</div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Wed Sep 30</span>
+              <span class="chip travel">Arrival &#183; ~1 hr from HND, ~2 from NRT</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Dad lands HND 8:10 am. Cash at the airport exchange counter, a Welcome Suica, then Keikyu to Yokohama and the JR Yokosuka Line to Kamakura (~80 min, ~&#165;800). Full step-by-step: <a href="https://claude.ai/code/artifact/064903fd-b7ee-448a-8324-6f28a976f8dc">Haneda arrival playbook</a>.</dd></div>
+              <div><dt>Midday</dt><dd>At Kaihinsou around 11:30 am &#8211; 12:30 pm &#8212; taxi or 2 Enoden stops to Yuigahama from Kamakura Station. Too early for check-in: drop the bags, get lunch, stay awake.</dd></div>
+              <div><dt>PM</dt><dd>Melissa lands NRT 3:30 pm and reaches Kamakura around 6&#8211;7 pm. Easy dinner, evening soak, early night.</dd></div>
+            </dl>
+          </div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Thu Oct 1</span>
+              <span class="chip">Kamakura full day</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Daibutsu &#8212; the Great Buddha at Kotoku-in (open 7 days).</dd></div>
+              <div><dt>Lunch</dt><dd>Street food along Komachi-dori &#8212; the "curry pan" (curry-filled bread) recommendation.</dd></div>
+              <div><dt>PM</dt><dd>Komachi-dori shopping street for local crafts; Houkokuji and its bamboo grove, east of Komachi-dori.</dd></div>
+              <div><dt>Dinner</dt><dd>Hunt for a zaru soba place &#8212; cold soba on a tray with dipping sauce.</dd></div>
+            </dl>
+          </div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Fri Oct 2</span>
+              <span class="chip">Kamakura full day</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Hasedera temple (open 7 days).</dd></div>
+              <div><dt>Lunch</dt><dd>The restaurant at Hasedera &#8212; nice views over town and the ocean.</dd></div>
+              <div><dt>PM</dt><dd>If the weather is good, walk west along Shichirigahama Beach for the Fuji-san view. Enoshima island as an option.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-head">
+        <div class="place">Kyoto</div>
+        <div class="stay-range">Sat Oct 3 &#8594; Wed Oct 7</div>
+      </div>
+      <div class="card">
+        <div class="badge-row">
+          <span class="badge">Booked</span>
+          <span class="badge nights">4 nights</span>
+        </div>
+        <div class="lodging-name">KOKO HOTEL Kyoto Sanjo</div>
+        <div class="lodging-desc">"Sanjo" station area as home base &#8212; walkable to many points of interest. East of the river, on-site laundry, breakfast included (served 7&#8211;10am). Public bathhouse "Magobashi-yu" reportedly a 3-min walk west. <a href="https://koko-hotels.com/kyoto_sanjo/">koko-hotels.com</a></div>
+        <div class="meta-grid">
+          <div><div class="k">Rate</div><div class="v">$973.26 / 4 nights ($243/night), breakfast incl.</div></div>
+          <div><div class="k">Cancellation</div><div class="v">Free until 8/21</div></div>
+          <div><div class="k">Reservation #</div><div class="v">T2E2E6687BB62</div></div>
+          <div><div class="k">Check-in</div><div class="v">Oct 3, from 3pm</div></div>
+        </div>
+
+        <div class="days">
+          <div class="days-label">Day by day</div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Sat Oct 3</span>
+              <span class="chip travel">Kamakura &#8594; Kyoto &#183; ~3 hrs by train</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>To Shin-Yokohama station for the Nozomi shinkansen to Kyoto. Possible Uniqlo stop while waiting &#8212; "AIRism" shirts, supposed to be good in the heat.</dd></div>
+              <div><dt>Lunch</dt><dd>Ekiben on the shinkansen.</dd></div>
+              <div><dt>PM</dt><dd>Check in and rest before the evening.</dd></div>
+              <div><dt>Dinner</dt><dd>An early bite &#8212; stroll into Gion and see what looks good, or the Sanjo area near the hotel.</dd></div>
+            </dl>
+            <div class="tour">
+              <div class="tour-head">
+                <span class="tour-date">Sat Oct 3, 6:00pm</span>
+                <span class="tour-name">Gion Corner &#8212; Traditional Arts Performance</span>
+              </div>
+              <div class="tour-desc">Gionkobu Kaburenjo Annex theater, 570-2 Minamigawa Gion-machi, Higashiyama-ku. Melissa picked the earlier 6pm slot with first-night jetlag in mind, leaving room for an early dinner after check-in. Yasaka shrine is lit up afterwards if we have the legs for it.</div>
+              <div class="meta-grid">
+                <div><div class="k">Order #</div><div class="v">00064089</div></div>
+                <div><div class="k">Seats</div><div class="v">Premium, row 3 &#183; seats 4 &amp; 5</div></div>
+                <div><div class="k">Total paid</div><div class="v">&#165;13,310 (&#165;6,600 &#215;2 + &#165;110 fee)</div></div>
+                <div><div class="k">Tickets</div><div class="v">lessQ QR e-tickets &#8212; <a href="https://www.s2.e-get.jp/gtset4/pq/?tn=35bd9511165581efb7f2ca176ee9eadd3cb143a75eabf195b69e1365289d6633sq&amp;E=1">show QR at the door</a></div></div>
+                <div><div class="k">Venue tel</div><div class="v">075-561-1119</div></div>
+              </div>
+              <div class="flag"><strong>No changes or cancellations</strong> &#8212; accepted for no reason whatsoever, including transit delays. Build in buffer time.</div>
+            </div>
+          </div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Sun Oct 4</span>
+              <span class="chip">Kyoto full day</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Fushimi Inari (open 7 days). Grab snacks to bring along &#8212; the top loop is a bit of a hike.</dd></div>
+              <div><dt>Lunch</dt><dd>Spring Valley brewpub, near Teramachi.</dd></div>
+              <div><dt>PM</dt><dd>Teramachi-dori exploring and shopping.</dd></div>
+              <div><dt>Dinner</dt><dd>Snack through Nishiki market &#8212; Kyo no Onikudokoro Hiro for wagyu "sushi" and katsu, Nishiki Ichiha for taiyaki.</dd></div>
+            </dl>
+          </div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Mon Oct 5</span>
+              <span class="chip">Arashiyama day</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Out to Arashiyama on the west end of town. "eXcafe" for a grilled dango stop, then Gi&#333;ji Temple &#8212; moss-covered garden, the non-touristy pick.</dd></div>
+              <div><dt>PM</dt><dd>Nij&#333; Castle.</dd></div>
+            </dl>
+            <div class="tour">
+              <div class="tour-head">
+                <span class="tour-date">Mon Oct 5, 11:30am</span>
+                <span class="tour-name">Tofu Kaiseki Lunch &#8212; Shoraian (&#26494;&#31839;&#24245;)</span>
+              </div>
+              <div class="tour-desc">Arashiyama, table seating for 2. Lunch Course: Shofu &#8212; appetizer, assorted seasonal delicacies, hot tofu, Japanese Wagyu mini steak, and more. Plan: take the tram out in the morning, explore by the river, visit the moss-temple nearby, then lunch in a beautiful riverside setting.</div>
+              <div class="meta-grid">
+                <div><div class="k">Reservation ID</div><div class="v">29d80b55</div></div>
+                <div><div class="k">Address</div><div class="v">Kamenocho, Saga, Ukyo-ku, Kyoto &#183; 075-861-0123</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Tue Oct 6</span>
+              <span class="chip">Kyoto full day</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Kyoto National Museum &#8212; the Tale of Genji special e-maki exhibition opens this very day.</dd></div>
+            </dl>
+            <div class="tour">
+              <div class="tour-head">
+                <span class="tour-date">Tue Oct 6, 3:00pm</span>
+                <span class="tour-name">Gion Walking Tour &#8212; PiQtour</span>
+              </div>
+              <div class="tour-desc">Private walking tour with Abby (PiQtour), 180 minutes. Booked the moment an October date opened up in the Kyoto window.</div>
+              <div class="meta-grid">
+                <div><div class="k">Cost</div><div class="v">$399.00 (paid)</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-head">
+        <div class="place">Nara</div>
+        <div class="stay-range">Wed Oct 7 &#8594; Thu Oct 8</div>
+      </div>
+      <div class="card">
+        <div class="badge-row">
+          <span class="badge">Booked</span>
+          <span class="badge nights">1 night</span>
+        </div>
+        <div class="lodging-name">SETRE Naramachi</div>
+        <div class="lodging-desc">Right next to Nara Park, walkable from Nara station. All-wood construction with a sustainability vibe, central courtyard, possible views of Sarusawa pond. <a href="https://www.hotelsetre.com/lp/en_nara/">hotelsetre.com</a></div>
+        <div class="meta-grid">
+          <div><div class="k">Rate</div><div class="v">$274 / night, breakfast incl.</div></div>
+          <div><div class="k">Cancellation</div><div class="v">Free until 10/1</div></div>
+        </div>
+
+        <div class="days">
+          <div class="days-label">Day by day</div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Wed Oct 7</span>
+              <span class="chip travel">Kyoto &#8594; Nara &#183; ~30&#8211;40 min by train</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Slow start &#8212; rest the feet.</dd></div>
+              <div><dt>Lunch</dt><dd>At Kyoto station before heading out.</dd></div>
+              <div><dt>PM</dt><dd>Travel to Nara, check in at SETRE Naramachi.</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="note">Nara sightseeing continues the morning of Oct 8 &#8212; see the Osaka card below. A Nara temple visit tour was mentioned but booking details haven't come through yet.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-head">
+        <div class="place">Osaka</div>
+        <div class="stay-range">Thu Oct 8 &#8594; Sun Oct 11</div>
+      </div>
+      <div class="card">
+        <div class="badge-row">
+          <span class="badge">Booked</span>
+          <span class="badge nights">3 nights</span>
+        </div>
+        <div class="lodging-name">HOTEL AMANEK Osaka Namba</div>
+        <div class="lodging-desc">"Namba" station area as home base &#8212; near the Dotonbori nightlife / street-food strip, easy to stagger home after izakaya fun. Rooms a good size, breakfast included, on-site laundry. <a href="https://amanekhotels.jp/osaka-namba/">amanekhotels.jp</a></div>
+        <div class="meta-grid">
+          <div><div class="k">Rate</div><div class="v">&#165;63,234 / 3 nights (~$421, $140/night)</div></div>
+          <div><div class="k">Cancellation</div><div class="v">Free until 9/30</div></div>
+          <div><div class="k">Reservation #</div><div class="v">3458-8621-0195</div></div>
+          <div><div class="k">Check-in</div><div class="v">Oct 8, from 3pm</div></div>
+        </div>
+
+        <div class="days">
+          <div class="days-label">Day by day</div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Thu Oct 8</span>
+              <span class="chip travel">Nara &#8594; Osaka &#183; ~50 min by train</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Todaiji temple Daibutsu and Nara Park.</dd></div>
+              <div><dt>Lunch</dt><dd>Kamameshi Restaurant Shizuka Kouen Ten.</dd></div>
+              <div><dt>PM</dt><dd>Harushika Sake Brewery store for a tasting, then on to Osaka.</dd></div>
+              <div><dt>Dinner</dt><dd>Kuromon market stroll and snacks &#8212; looks to be about a 6 min walk from the hotel.</dd></div>
+            </dl>
+          </div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Fri Oct 9</span>
+              <span class="chip mark">Dad's birthday</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Osaka Castle Park (Morinomiya station), then the "olive green" line out to Taisho for lunch.</dd></div>
+              <div><dt>Lunch</dt><dd>Tugboat Taisho &#8212; "Beer Stand Marca".</dd></div>
+              <div><dt>PM</dt><dd>Same "olive green" line on to Shinsaibashi; Americamura before dinner.</dd></div>
+              <div><dt>Dinner</dt><dd>West Coast Brewing "Dark Lab". The day's mission: hunt down some delicious beers.</dd></div>
+            </dl>
+          </div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Sat Oct 10</span>
+              <span class="chip">Osaka full day</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Outdoor farmhouse museum (Ryokuchikoen station).</dd></div>
+              <div><dt>Lunch</dt><dd>Soba spot north of Ryokuchikoen station.</dd></div>
+              <div><dt>PM</dt><dd>Probably an afternoon nap to prep for izakaya night.</dd></div>
+              <div><dt>Dinner</dt><dd>Dotonbori street food and pub crawl &#8212; the "Hozenji Yokocho" alleyway is the recommendation to explore.</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="note">Local specialty to try: "Nikusui" &#8212; udon soup without the noodles, with beef.</div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-head">
+        <div class="place">Kanazawa</div>
+        <div class="stay-range">Sun Oct 11 &#8594; Tue Oct 13</div>
+      </div>
+      <div class="card">
+        <div class="badge-row">
+          <span class="badge">Booked</span>
+          <span class="badge nights">2 nights</span>
+        </div>
+        <div class="lodging-name">the square hotel KANAZAWA</div>
+        <div class="lodging-desc">Nice central location, walkable from the station (~15 min) or a short taxi ride. Soaking baths on-site, 13th floor. <a href="https://www.the-squarehotel.com/skz/">the-squarehotel.com</a></div>
+        <div class="meta-grid">
+          <div><div class="k">Rate</div><div class="v">&#165;53,942 / 2 nights (~$359, $179/night)</div></div>
+          <div><div class="k">Cancellation</div><div class="v">Free until 10/9</div></div>
+          <div><div class="k">Reservation #</div><div class="v">3460-7135-5427</div></div>
+          <div><div class="k">Check-in</div><div class="v">Oct 11, from 3pm</div></div>
+        </div>
+
+        <div class="days">
+          <div class="days-label">Day by day</div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Sun Oct 11</span>
+              <span class="chip travel">Osaka &#8594; Kanazawa &#183; 2 hr 30 by train</span>
+            </div>
+            <dl class="slots">
+              <div><dt>Lunch</dt><dd>Ekiben on the shinkansen.</dd></div>
+              <div><dt>Dinner</dt><dd>Try kaisendon &#8212; Omicho market should have some good spots.</dd></div>
+            </dl>
+          </div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Mon Oct 12</span>
+              <span class="chip">Kanazawa full day</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Kenrokuen garden, then the Kaga-Yuzen Kimono Center right beside it &#8212; shows off the local Kanazawa dyeing craft.</dd></div>
+              <div><dt>PM</dt><dd>Samurai residence exhibits (Nomura, ashigaru).</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div class="note">Online pre-check-in available &#8212; must be completed before arrival day: <a href="https://ulr.jp/4HPb5sex">ulr.jp/4HPb5sex</a></div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-head">
+        <div class="place">Bessho-Onsen</div>
+        <div class="stay-range">Tue Oct 13 &#8594; Wed Oct 14</div>
+      </div>
+      <div class="card">
+        <div class="badge-row">
+          <span class="badge">Booked</span>
+          <span class="badge nights">1 night</span>
+        </div>
+        <div class="lodging-name">Ryokan Hanaya</div>
+        <div class="lodging-desc">Beautiful and authentic ryokan with a central garden courtyard, 5 min walk from the train station. Room: 8-tatami + 6-tatami, in the "Main" section. Rate includes a kaiseki dinner and breakfast &#8212; a splurge, but a highlight stay. <a href="https://www.hanaya.ne.jp/">hanaya.ne.jp</a> &#183; <a href="https://www.hanaya.ne.jp/ohuro.htm">bath info</a></div>
+        <div class="meta-grid">
+          <div><div class="k">Rate</div><div class="v">&#165;55,000 / night (~$366), kaiseki dinner + breakfast incl.</div></div>
+          <div><div class="k">Cancellation</div><div class="v">Free until 8 days before (by 10/5)</div></div>
+          <div><div class="k">Reservation #</div><div class="v">9HDMYC8A &#183; Tel 05419053565</div></div>
+          <div><div class="k">Check-in</div><div class="v">Oct 13, from 3pm</div></div>
+        </div>
+
+        <div class="days">
+          <div class="days-label">Day by day</div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Tue Oct 13</span>
+              <span class="chip travel">Kanazawa &#8594; Bessho-Onsen &#183; 2 hr 30 by train</span>
+            </div>
+            <dl class="slots">
+              <div><dt>Lunch</dt><dd>Ekiben on the shinkansen.</dd></div>
+              <div><dt>PM</dt><dd>Settle into the ryokan and soak &#8212; this is the onsen night.</dd></div>
+              <div><dt>Dinner</dt><dd>Ryokan Hanaya kaiseki, included in the rate.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stop">
+      <div class="stop-head">
+        <div class="place">Tokyo &#8212; Haneda</div>
+        <div class="stay-range">Wed Oct 14 &#8594; Thu Oct 15</div>
+      </div>
+      <div class="card">
+        <div class="badge-row">
+          <span class="badge">Booked</span>
+          <span class="badge nights">1 night</span>
+        </div>
+        <div class="lodging-name">Hotel Villa Fontaine Grand Haneda Airport</div>
+        <div class="lodging-desc">Located right at Haneda Terminal 3, with easy access to the Tokyo Monorail for exploring the Hamamatsucho area. Breakfast not booked &#8212; Dad's early departure would be before service opens; plan to stash some morning snacks the day before. <a href="https://www.hvf.jp/eng/hanedaairport-grand/">hvf.jp</a></div>
+        <div class="meta-grid">
+          <div><div class="k">Rate</div><div class="v">&#165;24,840 / night (~$166)</div></div>
+          <div><div class="k">Cancellation</div><div class="v">Free until 3 days before arrival</div></div>
+          <div><div class="k">Itinerary #</div><div class="v">21125B9017370</div></div>
+          <div><div class="k">Room 1 Confirmation #</div><div class="v">41523SG071366</div></div>
+          <div><div class="k">Check-in</div><div class="v">Oct 14, from 3pm</div></div>
+        </div>
+
+        <div class="days">
+          <div class="days-label">Day by day</div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Wed Oct 14</span>
+              <span class="chip travel">Bessho-Onsen &#8594; Tokyo &#183; 2 hr 15 by train</span>
+            </div>
+            <dl class="slots">
+              <div><dt>AM</dt><dd>Anraku-ji, or just wander around town generally.</dd></div>
+              <div><dt>Lunch</dt><dd>Ekiben on the shinkansen.</dd></div>
+              <div><dt>PM</dt><dd>Tokyo monorail out to Hamamatsucho &#8212; last souvenir shopping, Shiba park for Tokyo Tower.</dd></div>
+            </dl>
+          </div>
+
+          <div class="day">
+            <div class="day-head">
+              <span class="day-date">Thu Oct 15</span>
+              <span class="chip travel">Departure day</span>
+            </div>
+            <dl class="slots">
+              <div><dt>All day</dt><dd>Dad departs HND 9:40 am. Melissa departs NRT 6:15 pm.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="tours-callout">
+    <h2>Tours &amp; activities &#8212; still filling in</h2>
+    <p>Three reservations are in, all in Kyoto: the Gion Corner performance (Oct 3), the Shoraian tofu kaiseki lunch (Oct 5), and the PiQtour Gion walking tour (Oct 6).</p>
+    <p>Kamakura, Nara, Osaka, Kanazawa, Bessho-Onsen and Tokyo have day plans sketched out but nothing reserved &#8212; send over any more bookings and they'll be slotted into the right day. Still waiting on the Nara temple visit tour details.</p>
+  </div>
+
+  <footer>Japan Trip &#8212; Version 3 &#183; day-by-day plans + Gion Corner booking &#183; arrival day procedure lives in its own document</footer>
+</div>

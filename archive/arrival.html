@@ -1,0 +1,524 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Haneda Arrival Playbook</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #f7f4ee;
+    --surface: #ffffff;
+    --surface-raised: #fdfcf9;
+    --ink: #262320;
+    --ink-soft: #55504a;
+    --muted: #8c867d;
+    --line: #e2ddd2;
+    --accent: #223a5e;
+    --accent-soft: #dde4ee;
+    --accent-line: #223a5e33;
+    --booked: #3f6b4f;
+    --booked-soft: #e2ede4;
+    --warn: #8c3b2e;
+    --warn-soft: #f2e4e0;
+    --shadow: 0 1px 2px rgba(38,35,32,0.04), 0 6px 20px -8px rgba(38,35,32,0.10);
+
+    /* type scale - desktop */
+    --fs-label: 11px;
+    --fs-chip: 10.5px;
+    --fs-meta: 13px;
+    --fs-body: 14px;
+    --fs-slot: 13.5px;
+    --fs-name: 16px;
+    --fs-tour: 14px;
+    --fs-daydate: 15px;
+    --fs-place: 24px;
+    --fs-stat: 20px;
+    --fs-range: 13px;
+    --fs-h1: clamp(32px, 6vw, 44px);
+    --fs-kanji: 30px;
+    --fs-kanji-big: 42px;
+
+    /* rhythm */
+    --pad-body: 56px 20px 100px;
+    --pad-card: 18px 20px;
+    --rail: 28px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #17181a;
+      --surface: #201f1d;
+      --surface-raised: #242220;
+      --ink: #ece7de;
+      --ink-soft: #c7c0b5;
+      --muted: #8f897f;
+      --line: #37342f;
+      --accent: #8ea9d1;
+      --accent-soft: #24344a;
+      --accent-line: #8ea9d155;
+      --booked: #8fc09e;
+      --booked-soft: #223327;
+      --warn: #e0968a;
+      --warn-soft: #3a2622;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -8px rgba(0,0,0,0.45);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #17181a;
+    --surface: #201f1d;
+    --surface-raised: #242220;
+    --ink: #ece7de;
+    --ink-soft: #c7c0b5;
+    --muted: #8f897f;
+    --line: #37342f;
+    --accent: #8ea9d1;
+    --accent-soft: #24344a;
+    --accent-line: #8ea9d155;
+    --booked: #8fc09e;
+    --booked-soft: #223327;
+    --warn: #e0968a;
+    --warn-soft: #3a2622;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px -8px rgba(0,0,0,0.45);
+  }
+
+  /* phone - tuned for the Xperia 1's 411px-wide, 21:9 screen */
+  @media (max-width: 700px) {
+    :root {
+      --fs-label: 15px;
+      --fs-chip: 15px;
+      --fs-meta: 20px;
+      --fs-body: 22px;
+      --fs-slot: 22px;
+      --fs-name: 25px;
+      --fs-tour: 23px;
+      --fs-daydate: 26px;
+      --fs-place: 36px;
+      --fs-stat: 32px;
+      --fs-range: 19px;
+      --fs-h1: 44px;
+      --fs-kanji: 44px;
+      --fs-kanji-big: 52px;
+
+      --pad-body: 28px 14px 72px;
+      --pad-card: 18px 16px;
+      --rail: 16px;
+    }
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+    padding: var(--pad-body);
+  }
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  header.masthead {
+    margin-bottom: 40px;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-label);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 700;
+    font-size: var(--fs-h1);
+    line-height: 1.15;
+    margin: 0 0 12px;
+    text-wrap: balance;
+    color: var(--ink);
+  }
+  .dates-line {
+    font-size: var(--fs-body);
+    color: var(--ink-soft);
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .dates-line .n {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+  .dates-line .sep { color: var(--muted); }
+
+  a {
+    color: var(--accent);
+    overflow-wrap: anywhere;
+  }
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* arrival playbook */
+  .playbook {
+    margin-top: 28px;
+    border: 1px solid var(--accent-line);
+    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    padding: var(--pad-card);
+  }
+  .playbook > h2 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-label);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 4px;
+  }
+  .playbook .pb-sub {
+    font-size: var(--fs-meta);
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0 0 4px;
+  }
+  .pb-step {
+    border-top: 1px dashed var(--line);
+    padding-top: 16px;
+    margin-top: 16px;
+  }
+  .pb-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+  }
+  .pb-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-chip);
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 4px;
+    padding: 3px 8px;
+    white-space: nowrap;
+  }
+  .pb-title {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    font-size: var(--fs-name);
+    color: var(--ink);
+  }
+  .pb-clock {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-chip);
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .pb-step ol {
+    margin: 0;
+    padding-left: 1.3em;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .pb-step ol li {
+    font-size: var(--fs-slot);
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .pb-step ol li strong { color: var(--ink); font-weight: 700; }
+  .pb-warn {
+    margin-top: 12px;
+    font-size: var(--fs-meta);
+    line-height: 1.55;
+    color: var(--ink-soft);
+    background: var(--warn-soft);
+    border-left: 3px solid var(--warn);
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+  }
+  .pb-warn b { color: var(--warn); }
+  .pb-card {
+    margin-top: 12px;
+    border: 1px dashed var(--accent-line);
+    border-radius: 8px;
+    background: var(--surface-raised);
+    padding: 12px 14px;
+  }
+  .pb-card .pb-card-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .pb-jp {
+    font-family: 'Shippori Mincho', serif;
+    font-size: var(--fs-name);
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .pb-romaji {
+    font-size: var(--fs-meta);
+    color: var(--muted);
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  footer {
+    margin-top: 40px;
+    font-size: var(--fs-meta);
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* kanji - deliberately oversized, for recognising signs at a glance */
+  .kanji {
+    font-family: 'Shippori Mincho', serif;
+    font-size: var(--fs-kanji);
+    font-weight: 600;
+    line-height: 1;
+    color: var(--ink);
+    white-space: nowrap;
+    margin: 0 0.12em;
+    vertical-align: -0.14em;
+  }
+  .kanji-row {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .kanji-card {
+    flex: 1 1 150px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--surface-raised);
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .kanji-card.go {
+    border-color: var(--booked);
+    background: var(--booked-soft);
+  }
+  .kanji-card.stop {
+    border-color: var(--warn);
+    background: var(--warn-soft);
+  }
+  .kanji-card .big {
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    font-size: var(--fs-kanji-big);
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .kanji-card .rom {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: var(--fs-chip);
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .kanji-card .cap {
+    font-size: var(--fs-label);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .kanji-card.go .cap { color: var(--booked); }
+  .kanji-card.stop .cap { color: var(--warn); }
+  /* one card per row on a phone so nothing is ever squeezed sideways */
+  @media (max-width: 700px) {
+    .kanji-card { flex: 1 1 100%; }
+  }
+
+  /* standalone page - first step needs no divider above it */
+  .playbook .pb-step:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .lead {
+    font-size: var(--fs-body);
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 22px 0 0;
+    max-width: 62ch;
+  }
+  .backlink {
+    margin-top: 14px;
+    font-size: var(--fs-meta);
+    color: var(--muted);
+  }
+</style>
+
+<div class="page">
+  <header class="masthead">
+    <div class="eyebrow">Andreas Family &#8212; Arrival Day</div>
+    <h1>Haneda, Step by Step</h1>
+    <div class="dates-line">
+      <span class="n">Wed Sep 30, 2026</span>
+      <span class="sep">&#183;</span><span>HND 8:10 am &#8594; Kaihinsou Kamakura</span>
+    </div>
+    <p class="lead">Cash, then Suica, then Kamakura &#8212; in that order, one step at a time. Nothing here is timed or booked, so if a step takes twice as long, the day still works.</p>
+    <div class="backlink">Part of the <a href="https://claude.ai/code/artifact/b47cfbb5-4c73-465f-89d8-abf92bf84984">Japan trip itinerary</a>. Station names are printed large in kanji where they matter &#8212; the full study list is in <b>DESTINATIONS-KANJI.rtf</b>.</div>
+  </header>
+
+  <section class="playbook" id="haneda-arrival">
+
+    <div class="pb-step">
+      <div class="pb-head">
+        <span class="pb-num">0</span>
+        <span class="pb-title">On the plane, before landing</span>
+        <span class="pb-clock">last hour of the flight</span>
+      </div>
+      <ol>
+        <li>Have the <strong>Visit Japan Web QR codes</strong> ready (immigration + customs) and screenshot them so they work with no wi-fi. If they aren't set up, no problem &#8212; paper forms are handed out on board and available in the hall.</li>
+        <li>Move <strong>passport, US cash, and a credit card</strong> into one pocket you can reach without opening the suitcase.</li>
+        <li>Set your watch to Japan time. It will be <strong>Wednesday morning</strong> when you land, and the plan is to stay awake until about 9 pm.</li>
+      </ol>
+    </div>
+
+    <div class="pb-step">
+      <div class="pb-head">
+        <span class="pb-num">1</span>
+        <span class="pb-title">Off the plane to the arrival lobby</span>
+        <span class="pb-clock">8:10 &#8594; ~9:30 am</span>
+      </div>
+      <ol>
+        <li>Follow the overhead signs marked <strong>Arrival / Immigration</strong>. There is only one way to go &#8212; keep walking with the crowd.</li>
+        <li><strong>Immigration:</strong> passport plus QR code (or paper form). They take a photo and fingerprints. 20&#8211;40 minutes in line is normal.</li>
+        <li><strong>Baggage claim</strong>, then <strong>Customs</strong> (another QR scan or the paper slip). Free luggage carts are everywhere &#8212; take one.</li>
+        <li>You come out into the <strong>Arrival Lobby, 2nd floor, Terminal 3</strong>. Stop here. This one room has everything in steps 2 and 3. Find a bench, sit for two minutes, get your bearings.</li>
+      </ol>
+      <div class="pb-warn"><b>If anything goes sideways:</b> the Airport Information counters in this lobby are staffed with English speakers and are used to tired, turned-around travelers. Ask. That is what they are there for.</div>
+    </div>
+
+    <div class="pb-step">
+      <div class="pb-head">
+        <span class="pb-num">2</span>
+        <span class="pb-title">Get yen &#8212; currency exchange counter</span>
+        <span class="pb-clock">~15 min</span>
+      </div>
+      <ol>
+        <li>In the <strong>2F Arrival Lobby</strong>, find the <strong>Japan Airport Terminal foreign currency exchange</strong> counter. It is in this lobby, generally to your left as you come out of the customs exit, and it is <strong>open 24 hours</strong>. Signs read "Currency Exchange" or "Foreign Exchange."</li>
+        <li>Hand over your <strong>US dollars</strong>, and your passport if asked. They take US bills and coins; elsewhere in Japan, don't count on coins.</li>
+        <li><strong>Change $400&#8211;500 to start.</strong> Whatever the rate board says is the rate &#8212; there is no negotiating and no better booth hiding elsewhere in the terminal. That is roughly &#165;60,000&#8211;75,000, which covers taxis, meals and small shops for the first several days.</li>
+        <li>Ask for <strong>small bills</strong> &#8212; "smaller bills, please." A stack of &#165;10,000 notes is awkward; you want &#165;1,000 notes for taxis, ticket machines and vending machines.</li>
+        <li>Put the yen in your wallet <em>before</em> you walk away from the counter, and keep the receipt.</li>
+      </ol>
+      <div class="pb-warn"><b>Do not use the "Pocket Change" kiosk</b> for this. That machine is for dumping leftover foreign coins on the way <i>out</i> of Japan, not for buying yen. A 7-Eleven ATM also works and takes US cards, but the staffed counter is the simpler move when you are holding cash.</div>
+    </div>
+
+    <div class="pb-step">
+      <div class="pb-head">
+        <span class="pb-num">3</span>
+        <span class="pb-title">Buy and load a Welcome Suica</span>
+        <span class="pb-clock">~15&#8211;30 min</span>
+      </div>
+      <ol>
+        <li>From the same lobby, follow signs for <strong>Trains / Tokyo Monorail <span class="kanji">&#26481;&#20140;&#12514;&#12494;&#12524;&#12540;&#12523;</span> / Keikyu Line <span class="kanji">&#20140;&#24613;&#32218;</span></strong>. The <strong>Welcome Suica machines</strong> sit by the <strong>Tokyo Monorail</strong> ticket area and the <strong>JR East Travel Service Center</strong> in Terminal 3. They are dedicated machines labeled "Welcome Suica," not the ordinary ticket machines.</li>
+        <li>Touch the screen and pick <strong>English</strong> first &#8212; every one of these machines has it.</li>
+        <li>Choose <strong>Welcome Suica</strong> and load <strong>&#165;10,000</strong> (the machine offers set amounts from &#165;1,000 to &#165;10,000). There is <strong>no deposit</strong> &#8212; every yen goes onto the card. The airport machines are the one place you can pay by <strong>credit card</strong>; after that, top-ups are cash.</li>
+        <li>Take the card and the receipt. Put the card somewhere you can reach in one motion &#8212; a shirt pocket, not the bottom of a bag. You will tap it at every gate, several times a day.</li>
+      </ol>
+      <div class="pb-card">
+        <div class="pb-card-label">What to know about the card</div>
+        <ol>
+          <li>Good for <strong>28 days from the first tap</strong> &#8212; the whole trip is 16 days, so it will outlast you.</li>
+          <li>Balance cap is <strong>&#165;20,000</strong>. Any leftover balance is <strong>forfeited</strong> at expiry and cannot be refunded, so keep it modest and top up as you go.</li>
+          <li>Works on nearly every train, subway and bus on this trip &#8212; JR, Keikyu, Enoden, and the Kyoto, Osaka and Kanazawa systems &#8212; and pays at convenience stores and many restaurants. It does <strong>not</strong> pay Shinkansen fares; those are separate tickets.</li>
+          <li>Top up at any station ticket machine (there is an English button) or at a 7-Eleven, FamilyMart or Lawson register &#8212; hand the clerk the card and cash and say "charge, please."</li>
+        </ol>
+      </div>
+      <div class="pb-warn"><b>If the line is long or the machines are down:</b> two clean fallbacks. (a) Buy a <strong>TOURIST PASMO</strong> at the Keikyu Tourist Information Center in Terminal 3 &#8212; same idea, works everywhere Suica does. (b) Skip the card for now and buy a <strong>paper ticket to Kamakura</strong> at the Keikyu machine; you can get an IC card any day later. Don't stand in a 45-minute queue while jet-lagged.</div>
+    </div>
+
+    <div class="pb-step">
+      <div class="pb-head">
+        <span class="pb-num">4</span>
+        <span class="pb-title">Train to Kamakura &#8212; Keikyu to Yokohama, then JR</span>
+        <span class="pb-clock">~80 min riding, ~&#165;800</span>
+      </div>
+      <ol>
+        <li>Follow signs for the <strong>Keikyu Line <span class="kanji">&#20140;&#24613;&#32218;</span></strong> (sometimes written "Keikyu Airport Line") down from the arrival lobby to the ticket gates. <strong>Tap the Suica flat on the gate reader</strong> &#8212; look for the ticket gate sign, <span class="kanji">&#25913;&#26413;</span>. The panel turns green and the gate stays open. Don't insert it anywhere.</li>
+        <li>Board a train <strong>toward Yokohama <span class="kanji">&#27178;&#27996;</span></strong>. Check the destination on the platform board and on the front of the train &#8212; those two characters are the ones that matter.</li>
+        <li>Ride roughly <strong>25&#8211;30 minutes to Yokohama <span class="kanji">&#27178;&#27996;</span></strong>. Stops are announced and displayed in English. Yokohama is a big, unmistakable station and most of the train gets off there.</li>
+        <li>At Yokohama, <strong>tap out</strong> of the Keikyu gates, follow signs for <strong>JR Lines</strong> &#8212; a 2&#8211;3 minute walk on the same level &#8212; and <strong>tap in</strong> at the JR gates.</li>
+        <li>Take the <strong>JR Yokosuka Line <span class="kanji">&#27178;&#38920;&#36032;&#32218;</span> toward Zushi <span class="kanji">&#36887;&#23376;</span> or Kurihama <span class="kanji">&#20037;&#37324;&#27996;</span></strong> (a Shonan-Shinjuku Line <span class="kanji">&#28248;&#21335;&#26032;&#23487;&#12521;&#12452;&#12531;</span> train toward Zushi works too). About <strong>25&#8211;30 minutes</strong>; Kamakura is one stop past Ofuna <span class="kanji">&#22823;&#33337;</span> &#8212; when you see those, start gathering your bags. Get off at <strong>Kamakura <span class="kanji">&#37772;&#20489;</span></strong> and tap out.</li>
+      </ol>
+      <div class="kanji-row">
+        <div class="kanji-card go">
+          <div class="big">&#27178;&#27996;</div>
+          <div class="rom">Yokohama</div>
+          <div class="cap">Ride to this</div>
+        </div>
+        <div class="kanji-card go">
+          <div class="big">&#37772;&#20489;</div>
+          <div class="rom">Kamakura</div>
+          <div class="cap">Get off at this</div>
+        </div>
+        <div class="kanji-card stop">
+          <div class="big">&#21697;&#24029;</div>
+          <div class="rom">Shinagawa</div>
+          <div class="cap">Wrong direction</div>
+        </div>
+      </div>
+      <div class="pb-warn"><b>The one trap:</b> many Keikyu trains out of Haneda run the other way, to <b>Shinagawa <span class="kanji">&#21697;&#24029;</span></b> and central Tokyo. You want one whose route shows <b>Yokohama <span class="kanji">&#27178;&#27996;</span></b> &#8212; destinations like Yokohama, Kanazawa-Bunko, Zushi-Hayama or Misakiguchi. If you end up on a Shinagawa train, get off at <b>Keikyu Kamata <span class="kanji">&#20140;&#24613;&#33970;&#30000;</span></b> a few minutes along and cross the platform to a Yokohama-bound train. No harm done and nothing extra on the Suica. Staff at the gate will point you to the right platform if you just say "Yokohama?"</div>
+      <div class="pb-warn">The old <b>direct airport bus to Kamakura is suspended</b> (since March 2024) &#8212; don't go looking for it. A taxi the whole way is possible but runs well over &#165;20,000.</div>
+    </div>
+
+    <div class="pb-step">
+      <div class="pb-head">
+        <span class="pb-num">5</span>
+        <span class="pb-title">Kamakura Station to Kaihinsou</span>
+        <span class="pb-clock">~5&#8211;10 min</span>
+      </div>
+      <ol>
+        <li><strong>Easiest with luggage &#8212; taxi <span class="kanji">&#12479;&#12463;&#12471;&#12540;</span>.</strong> Walk out the <strong>East Exit</strong> (the way out is <span class="kanji">&#20986;&#21475;</span>) of Kamakura Station <span class="kanji">&#37772;&#20489;</span> to the taxi rank and show the driver the card below. About <strong>5&#8211;8 minutes, roughly &#165;1,000&#8211;1,500</strong>. The rear door <strong>opens and closes by itself</strong> &#8212; stand back and let it. Many taxis take Suica or cards; have cash ready anyway.</li>
+        <li><strong>Or the little train.</strong> The <strong>Enoden <span class="kanji">&#27743;&#12494;&#38651;</span></strong> (Enoshima Electric Railway) platform is inside the west side of Kamakura Station. Ride <strong>2 stops to Yuigahama <span class="kanji">&#30001;&#27604;&#12460;&#27996;</span></strong> &#8212; about 4 minutes, ~&#165;200 on the Suica &#8212; then a <strong>1 minute walk</strong> to the hotel.</li>
+        <li>Walking from Kamakura Station is about 20 minutes. Fine another day; not today, not with bags.</li>
+      </ol>
+      <div class="kanji-row">
+        <div class="kanji-card go">
+          <div class="big">&#30001;&#27604;&#12460;&#27996;</div>
+          <div class="rom">Yuigahama</div>
+          <div class="cap">Your Enoden stop</div>
+        </div>
+        <div class="kanji-card">
+          <div class="big">&#27743;&#12494;&#38651;</div>
+          <div class="rom">Enoden</div>
+          <div class="cap">The line itself</div>
+        </div>
+      </div>
+      <div class="pb-card">
+        <div class="pb-card-label">Show this to the taxi driver</div>
+        <div class="pb-jp">&#12363;&#12356;&#12402;&#12435;&#33624;&#37772;&#20489;<br>&#12306;248-0014 &#31070;&#22856;&#24029;&#30476;&#37772;&#20489;&#24066;&#30001;&#27604;&#12460;&#27996;4-8-14<br>&#12371;&#12398;&#20303;&#25152;&#12414;&#12391;&#12362;&#39000;&#12356;&#12375;&#12414;&#12377;</div>
+        <div class="pb-romaji">Kaihinso Kamakura &#183; 4-8-14 Yuigahama, Kamakura-shi, Kanagawa 248-0014 &#183; "Kono jusho made onegai shimasu" &#8212; to this address, please &#183; Hotel phone <strong>0467-22-0960</strong> (from a foreign phone, +81 467-22-0960)</div>
+      </div>
+    </div>
+
+    <div class="pb-step">
+      <div class="pb-head">
+        <span class="pb-num">6</span>
+        <span class="pb-title">At the hotel &#8212; and staying upright</span>
+        <span class="pb-clock">~noon onward</span>
+      </div>
+      <ol>
+        <li>Realistically you arrive <strong>11:30 am &#8211; 12:30 pm</strong>, well before afternoon check-in. That is fine &#8212; <strong>leave the luggage at the front desk</strong> and go get lunch. Passport out; they will want it at check-in.</li>
+        <li><strong>Do not nap.</strong> Eat something, walk to the beach three minutes away, get daylight on your face. Bed around 9 pm and the jet lag is mostly settled by Thursday.</li>
+        <li>The big baths run <strong>3:00&#8211;11:30 pm</strong> and again <strong>6:30&#8211;8:30 am</strong>. An evening soak is the best thing going for a body that has been in a seat for twelve hours.</li>
+        <li><strong>Melissa lands NRT 3:30 pm</strong>, and Narita is roughly 2&#8211;2.5 hours out to Kamakura, so expect her at the hotel around <strong>6&#8211;7 pm</strong>. Plan dinner late and easy.</li>
+      </ol>
+      <div class="pb-warn"><b>Hard deadline:</b> the hotel <b>cannot check anyone in after 9:00 pm</b>. Nothing about this day should come near that, but if it goes badly, call <b>0467-22-0960</b> rather than just turning up late.</div>
+    </div>
+  </section>
+
+  <footer>Japan Trip &#8212; arrival day procedure &#183; re-verified 2026-09-20</footer>
+</div>
